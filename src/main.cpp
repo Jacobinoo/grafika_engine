@@ -1,5 +1,9 @@
 #include <SFML/Graphics.hpp>
 
+//Kuba: Głowna petla gry, Obsluga klawiatury i mszy
+//Łukasz: Zamkniecie gry, parametryzowanie innych parametrow
+//Kacper: Inicjjacja biblioteki, parametryzofanie trybu graficznego
+//4: Czyszczenie ekranu, obsluga bledow
 
 int main() {
 	sf::RenderWindow window( sf::VideoMode( { 200, 200 } ), "SFML works!" );
