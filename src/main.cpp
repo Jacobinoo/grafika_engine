@@ -1,3 +1,4 @@
+//inicjacja biblooteki - Kacper
 #include <SFML/Graphics.hpp>
 
 //Kuba: Głowna petla gry, Obsluga klawiatury i mszy

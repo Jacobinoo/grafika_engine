@@ -5,7 +5,7 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowEnums.hpp>
 #include <iostream>
-
+//KACPER
 void Engine::Init(const EngineConfig& config) {
     unsigned int windowStyle = sf::Style::Default;
     sf::State windowState = sf::State::Windowed;
@@ -56,6 +56,7 @@ void Engine::Init(const EngineConfig& config) {
 
     isRunning = true;
 }
+//KACPER
 
 void Engine::Run(IGame* game) {
     if(game) game->Start();
