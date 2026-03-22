@@ -1,26 +1,26 @@
-//inicjacja biblooteki - Kacper
-#include <SFML/Graphics.hpp>
+#include "DemoMyGame/MyGame.h"
+#include "Engine/Engine.h"
 
 //Kuba: Głowna petla gry, Obsluga klawiatury i mszy
 //Łukasz: Zamkniecie gry, parametryzowanie innych parametrow
 //Kacper: Inicjjacja biblioteki, parametryzofanie trybu graficznego
-//4: Czyszczenie ekranu, obsluga bledow
+//4: Czyszczenie ekranu
 
 int main() {
-	sf::RenderWindow window( sf::VideoMode( { 200, 200 } ), "SFML works!" );
-	sf::CircleShape shape( 100.f );
-	shape.setFillColor( sf::Color::Blue );
 
-	while ( window.isOpen() )
-	{
-		while ( const std::optional event = window.pollEvent() )
-		{
-			if ( event->is<sf::Event::Closed>() )
-				window.close();
-		}
+    EngineConfig config;
+    config.width = 1920;
+    config.height = 1080;
+    config.title = "Moja Gra";
+    config.windowMode = WindowMode::FULLSCREEN;
+    config.framerateLimit = 30;
 
-		window.clear();
-		window.draw( shape );
-		window.display();
-	}
+	Engine& engine = Engine::GetInstance();
+	engine.Init(config);
+
+    MyGame game;
+
+    engine.Run(&game);
+
+    return 0;
 }
