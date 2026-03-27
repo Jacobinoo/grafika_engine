@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Dokumentacja klasy IGame</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_i_game.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="class_i_game-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy IGame<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="group__module__engine.html">Silnik</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interfejs bazowy logiki gry uruchamianej przez silnik.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_i_game_8h_source.html">IGame.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla IGame</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_i_game.png" usemap="#IGame_map" alt=""/>
+  <map id="IGame_map" name="IGame_map">
+<area href="class_my_game.html" title="Przykladowa implementacja gry demonstracyjnej." alt="MyGame" shape="rect" coords="0,56,62,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a91b14c1b6019364120d5c5e4d4c64414" id="r_a91b14c1b6019364120d5c5e4d4c64414"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91b14c1b6019364120d5c5e4d4c64414">~IGame</a> ()=default</td></tr>
+<tr class="memdesc:a91b14c1b6019364120d5c5e4d4c64414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wirtualny destruktor wymagany do poprawnego usuwania po wskazniku bazowym.  <br /></td></tr>
+<tr class="separator:a91b14c1b6019364120d5c5e4d4c64414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b8f9f47aa76e807e79495f0488daac" id="r_a01b8f9f47aa76e807e79495f0488daac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01b8f9f47aa76e807e79495f0488daac">Start</a> ()=0</td></tr>
+<tr class="memdesc:a01b8f9f47aa76e807e79495f0488daac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jednorazowa inicjalizacja zasobow gry.  <br /></td></tr>
+<tr class="separator:a01b8f9f47aa76e807e79495f0488daac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907b855228ff86008294e7b8e2938d0a" id="r_a907b855228ff86008294e7b8e2938d0a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a907b855228ff86008294e7b8e2938d0a">Update</a> ()=0</td></tr>
+<tr class="memdesc:a907b855228ff86008294e7b8e2938d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizacja logiki gry wykonywana w kazdej klatce.  <br /></td></tr>
+<tr class="separator:a907b855228ff86008294e7b8e2938d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Interfejs bazowy logiki gry uruchamianej przez silnik. </p>
+<p>Silnik wywoluje metody tego interfejsu w cyklu zycia aplikacji:</p><ul>
+<li><a class="el" href="#a01b8f9f47aa76e807e79495f0488daac">Start()</a> raz po inicjalizacji,</li>
+<li><a class="el" href="#a907b855228ff86008294e7b8e2938d0a">Update()</a> raz na klatke. </li>
+</ul>
+
+<p class="definition">Definicja w linii <a class="el" href="_i_game_8h_source.html#l00011">11</a> pliku <a class="el" href="_i_game_8h_source.html">IGame.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a91b14c1b6019364120d5c5e4d4c64414" name="a91b14c1b6019364120d5c5e4d4c64414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b14c1b6019364120d5c5e4d4c64414">&#9670;&#160;</a></span>~IGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual IGame::~IGame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wirtualny destruktor wymagany do poprawnego usuwania po wskazniku bazowym. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a01b8f9f47aa76e807e79495f0488daac" name="a01b8f9f47aa76e807e79495f0488daac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b8f9f47aa76e807e79495f0488daac">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IGame::Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Jednorazowa inicjalizacja zasobow gry. </p>
+
+<p>Implementowany w <a class="el" href="class_my_game.html#a11b86622f4943938bd812fef5e125896">MyGame</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00081">Engine::Run()</a>.</p>
+
+</div>
+</div>
+<a id="a907b855228ff86008294e7b8e2938d0a" name="a907b855228ff86008294e7b8e2938d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a907b855228ff86008294e7b8e2938d0a">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IGame::Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizacja logiki gry wykonywana w kazdej klatce. </p>
+
+<p>Implementowany w <a class="el" href="class_my_game.html#a6eb23020dd6214329d363200894931ac">MyGame</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00081">Engine::Run()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li><a class="el" href="_i_game_8h_source.html">IGame.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_i_game.html">IGame</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

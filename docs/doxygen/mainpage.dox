@@ -1,0 +1,20 @@
+/**
+ * @mainpage Grafika Engine - Dokumentacja
+ *
+ * @section intro Wprowadzenie
+ * Ta dokumentacja opisuje architekture silnika 2D, modul gry demonstracyjnej
+ * oraz implementacje wybranych algorytmow grafiki rastrowej.
+ *
+ * @section modules Podzial dokumentacji
+ * - @ref module_engine
+ * - @ref module_components
+ * - @ref module_math
+ * - @ref module_renderer
+ * - @ref module_input
+ * - @ref module_demo
+ *
+ * @section generate Jak wygenerowac dokumentacje
+ * 1. Przejdz do katalogu glownego projektu.
+ * 2. Uruchom polecenie: `doxygen Doxyfile`
+ * 3. Otworz plik: `docs/output/html/index.html`
+ */

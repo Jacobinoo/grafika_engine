@@ -1,107 +1,151 @@
 #include "Engine.h"
 #include "IGame.h"
 #include "Input/Input.h"
+#include "Renderer/Renderer.h"
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowEnums.hpp>
 #include <iostream>
-//KACPER
+
+/**
+ * @brief Inicjalizuje glowny kontekst uruchomieniowy silnika.
+ */
 void Engine::Init(const EngineConfig& config) {
-    // 1. USTALENIE POCZĄTKOWYCH PARAMETRÓW OKNA
-    // Style::Default to okno z ramką, tytułem i przyciskami (zamknij, minimalizuj)
+    // 1) Ustawienia domyslne okna.
     unsigned int windowStyle = sf::Style::Default;
-    // State::Windowed oznacza, że okno nie zajmuje domyślnie całego ekranu
     sf::State windowState = sf::State::Windowed;
 
-    // 2. POBIERANIE DANYCH O MONITORZE
-    // Pobieramy parametry aktualnego trybu pulpitu (rozdzielczość i głębia kolorów w bitach)
+    // 2) Parametry aktualnego trybu pulpitu.
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 
-    // Tworzymy docelowy tryb wideo na podstawie danych z konfiguracji (szerokość, wysokość)
-    // Rzutujemy na (unsigned int), ponieważ SFML wymaga liczb dodatnich dla rozmiaru
+    // Tworzymy tryb bazowy z zadanej szerokosci/wysokosci.
     sf::VideoMode videoMode({(unsigned int)config.width, (unsigned int)config.height}, desktop.bitsPerPixel);
 
-    // 3. LOGIKA TRYBU PEŁNOEKRANOWEGO (FULLSCREEN)
+    // 3) Obsluga trybu pelnoekranowego.
     if (config.windowMode == WindowMode::FULLSCREEN) {
-        windowState = sf::State::Fullscreen; // Zmieniamy stan okna na pełny ekran
+        windowState = sf::State::Fullscreen;
         bool isModeSupported = false;
         
-        // Pobieramy listę wszystkich rozdzielczości wspieranych przez monitor w trybie pełnoekranowym
+        // Sprawdzamy, czy zadany tryb jest wspierany przez monitor.
         std::vector<sf::VideoMode> modes = sf::VideoMode::getFullscreenModes();
 
-        // Pętla sprawdzająca: Czy rozdzielczość podana przez użytkownika w config jest na liście wspieranych?
         for (const auto& mode : modes) {
             if (mode.size.x == config.width && mode.size.y == config.height) {
                 isModeSupported = true;
-                videoMode = mode; // Jeśli znaleziono pasujący tryb, przypisujemy go
+                videoMode = mode;
                 break;
             }
         }
 
-        // Jeśli monitor NIE wspiera żądanej rozdzielczości (zabezpieczenie przed błędem sterownika)
+        // Fallback: przechodzimy do natywnego trybu pulpitu.
         if (!isModeSupported) {
             std::cout << "[Engine] OSTRZEZENIE: Rozdzielczosc " << config.width << "x" << config.height
                       << " nie jest obslugiwana w Fullscreen na tym monitorze!" << std::endl;
             
-            // Wymuszamy bezpieczną rozdzielczość pulpitu, aby gra w ogóle się uruchomiła
             std::cout << "[Engine] Wymuszam natywna rozdzielczosc pulpitu: "
                       << desktop.size.x << "x" << desktop.size.y << std::endl;
 
             videoMode = desktop; 
         }
     }
-    // 4. LOGIKA TRYBU BEZRAMKOWEGO (BORDERLESS)
     else if (config.windowMode == WindowMode::BORDERLESS) {
-        // Style::None usuwa ramkę systemową i pasek tytułu
         windowStyle = sf::Style::None;
     }
 
-    // 5. KREACJA OKNA
-    // std::make_unique tworzy bezpieczny, inteligentny wskaźnik na okno RenderWindow
-    // Parametry: (rozmiar/kolory, tytuł okna, styl ramki, stan okna)
+    // 4) Tworzenie okna.
     window = std::make_unique<sf::RenderWindow>(videoMode, config.title, windowStyle, windowState);
 
-    // 6. KONFIGURACJA PŁYNNOŚCI (FPS)
-    // Wyłączamy VSync, aby ręcznie kontrolować limit klatek (mniejszy input lag w niektórych grach)
+    // 5) Konfiguracja FPS.
     window->setVerticalSyncEnabled(false);
-    
-    // Ustawiamy limit klatek na sekundę z pliku konfiguracyjnego
     window->setFramerateLimit(config.framerateLimit);
     targetFramerate = config.framerateLimit;
 
-    // Zabezpieczenie: jeśli ktoś poda limit 0, ustawiamy standardowe 60 FPS, żeby gra nie "pędziła" bez ograniczeń
     if(config.framerateLimit == 0) {
         window->setFramerateLimit(60);
         targetFramerate = 60;
     }
 
-    // Flaga informująca, że inicjalizacja przebiegła pomyślnie i silnik może zacząć pracę
+    // 6) Inicjalizacja renderera programowego.
+    renderer = std::make_unique<Renderer>(videoMode.size.x, videoMode.size.y);
+
+    // Rezerwacja redukuje realokacje i fragmentacje pamieci podczas tworzenia obiektow.
+    gameObjects.reserve(1000);
+    objectQueue.reserve(100);
+
     isRunning = true;
 }
-//KACPER
 
+/**
+ * @brief Uruchamia petle glowna i cykl zycia gry.
+ */
 void Engine::Run(IGame* game) {
     if(game) game->Start();
 
     while (window->isOpen() && isRunning) {
-        // Obsluga zdarzen okna
+        // 1) Obsluga zdarzen systemowych.
         while (const std::optional event = window->pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 Quit();
             }
         }
 
-        // Obsługa wejscia
+        // 2) Snapshot wejscia dla tej klatki.
         Input::Update();
 
-        // Wstrzykiwanie logiki twórcy gry
+        // 3) Kod gry uzytkownika.
         if (game) game->Update();
 
+        // 4) Aktualizacja aktywnych obiektow.
+        for (auto& obj : gameObjects) if (obj->isActive) obj->Update();
+
+        // Kolejka obiektow zapobiega invalidacji iteratorow podczas petli Update().
+        for (auto& newObj : objectQueue) {
+            gameObjects.push_back(std::move(newObj));
+        }
+        objectQueue.clear();
+
+        // Remove-erase idiom: liniowe usuniecie obiektow oznaczonych jako nieaktywne.
+        gameObjects.erase(
+            std::remove_if(gameObjects.begin(), gameObjects.end(),
+                [](const std::unique_ptr<GameObject>& obj) { return !obj->isActive; }),
+            gameObjects.end()
+        );
+
+        // 5) Render klatki.
+        window->clear(currentBackgroundColor);
+        renderer->Clear(currentBackgroundColor);
+
+        for (auto& obj : gameObjects) {
+            obj->Render(*renderer);
+        }
+
+        renderer->RenderToWindow(*window);
         window->display();
     }
+
+    // Sprzatanie po zakonczeniu petli.
+    ClearScene();
     if (window) window.reset();
+    if (renderer) renderer.reset();
 }
 
+/**
+ * @brief Ustawia kolor tla sceny.
+ */
+void Engine::SetBackgroundColor(Color color) {
+    currentBackgroundColor = color;
+}
+
+/**
+ * @brief Dodaje obiekt do kolejki tworzenia.
+ */
+void Engine::Instantiate(std::unique_ptr<GameObject> obj) {
+    objectQueue.push_back(std::move(obj));
+}
+
+/**
+ * @brief Zatrzymuje petle silnika i zamyka okno.
+ */
 void Engine::Quit() {
     isRunning = false;
     if (window->isOpen()) {
@@ -109,8 +153,21 @@ void Engine::Quit() {
     }
 }
 
-void Engine::ClearScene(sf::Color color) {
-    window->clear(color);
+/**
+ * @brief Czysci scene i kolejke obiektow.
+ */
+void Engine::ClearScene() {
+    gameObjects.clear();
+    objectQueue.clear();
 }
 
+/** @brief Zwraca referencje do okna. */
 const sf::RenderWindow& Engine::GetWindow() const { return *window; }
+/** @brief Zwraca referencje do renderera. */
+Renderer& Engine::GetRenderer() const { return *renderer; }
+/** @brief Zwraca szerokosc okna. */
+unsigned int Engine::GetScreenWidth() const { return window->getSize().x;};
+/** @brief Zwraca wysokosc okna. */
+unsigned int Engine::GetScreenHeight() const { return window->getSize().y;};
+/** @brief Zwraca docelowy limit FPS. */
+unsigned int Engine::GetTargetFramerate() const { return targetFramerate; }

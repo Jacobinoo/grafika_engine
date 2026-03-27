@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Plik źródłowy ShapeComponent.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_shape_component_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ShapeComponent.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_shape_component_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_base_component_8h.html">BaseComponent.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_primitives_8h.html">../Math/Primitives.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_renderer_8h.html">../Renderer/Renderer.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;variant&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">   11</a></span><span class="keyword">using </span><a class="code hl_typedef" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a> = std::variant&lt;LineSegment, Triangle, Rectangle, Polygon, Circle&gt;;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_shape_component.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="class_shape_component.html#adc4486ec24191d8c196fc81ebac6693b">ShapeComponent</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_base_component.html">BaseComponent</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_shape_component.html#a9369611f73f766b35ab73883593d8d0b">   22</a></span>    <a class="code hl_typedef" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a> <a class="code hl_variable" href="class_shape_component.html#a9369611f73f766b35ab73883593d8d0b">shape</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">   23</a></span>    sf::Color <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">   24</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">isFilled</a>;   </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_shape_component.html#adc4486ec24191d8c196fc81ebac6693b">   33</a></span>    <a class="code hl_function" href="class_shape_component.html#adc4486ec24191d8c196fc81ebac6693b">ShapeComponent</a>(<a class="code hl_typedef" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a> s, sf::Color c, <span class="keywordtype">bool</span> filled = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        : <a class="code hl_variable" href="class_shape_component.html#a9369611f73f766b35ab73883593d8d0b">shape</a>(s), <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>(c), <a class="code hl_variable" href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">isFilled</a>(filled) {}</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_shape_component.html#adb544e1bf9640e6b9206f558af44840c">   40</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_shape_component.html#adb544e1bf9640e6b9206f558af44840c">SetColor</a>(sf::Color newColor) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a> = newColor;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_shape_component.html#aefae19dac1803241faef24bb5c3997a5">   48</a></span>    sf::Color <a class="code hl_function" href="class_shape_component.html#aefae19dac1803241faef24bb5c3997a5">GetColor</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_shape_component.html#a197d01a3cf13cdac60af345bc5c4134f">   56</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_shape_component.html#a197d01a3cf13cdac60af345bc5c4134f">SetShape</a>(<a class="code hl_typedef" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a> newShape) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_variable" href="class_shape_component.html#a9369611f73f766b35ab73883593d8d0b">shape</a> = newShape;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_shape_component.html#a0a769e760610d056453adfaeafa37868">   64</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_shape_component.html#a0a769e760610d056453adfaeafa37868">Draw</a>(<a class="code hl_class" href="class_renderer.html">Renderer</a>&amp; renderer)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_base_component.html#a57d1c19f73e2cc486eca358114d3103e">gameObject</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_class" href="class_point2_d.html">Point2D</a> pos = <a class="code hl_variable" href="class_base_component.html#a57d1c19f73e2cc486eca358114d3103e">gameObject</a>-&gt;GetWorldPosition();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordtype">float</span> rot = <a class="code hl_variable" href="class_base_component.html#a57d1c19f73e2cc486eca358114d3103e">gameObject</a>-&gt;GetWorldAngle();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">// Dla kazdego typu figury wykonujemy ten sam pipeline:</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="comment">// 1) transformacja lokalna -&gt; swiat,</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="comment">// 2) wybor Draw/Fill.</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        std::visit([&amp;](<span class="keyword">auto</span>&amp;&amp; arg) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">using </span>T = std::decay_t&lt;<span class="keyword">decltype</span>(arg)&gt;;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, Circle&gt;) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="comment">// Kolo: obracamy tylko srodek lokalny i przesuwamy do pozycji obiektu.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <a class="code hl_class" href="class_point2_d.html">Point2D</a> worldCenter = arg.center.<a class="code hl_function" href="class_point2_d.html#a6e2140c2864fb60d91d263a4aa4dce00">Rotate</a>(rot) + pos;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <a class="code hl_class" href="class_circle.html">Circle</a> worldCircle(worldCenter, arg.radius);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">isFilled</a>) renderer.<a class="code hl_function" href="class_renderer.html#ab490ab43fc8504ceb5d8347930b844bf">Fill</a>(worldCircle, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="keywordflow">else</span> renderer.<a class="code hl_function" href="class_renderer.html#a4122ab041dbc7d1738406fbe5372c351">Draw</a>(worldCircle, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, Polygon&gt;) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                std::vector&lt;Point2D&gt; worldVerts;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; v : arg.vertices) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    worldVerts.push_back(v.Rotate(rot) + pos);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <a class="code hl_class" href="class_polygon.html">Polygon</a> worldPoly(worldVerts);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">isFilled</a>) renderer.<a class="code hl_function" href="class_renderer.html#ab490ab43fc8504ceb5d8347930b844bf">Fill</a>(worldPoly, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keywordflow">else</span> renderer.<a class="code hl_function" href="class_renderer.html#a4122ab041dbc7d1738406fbe5372c351">Draw</a>(worldPoly, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, Rectangle&gt;) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <span class="comment">// Po rotacji prostokat osiowy staje sie czworokatem.</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="comment">// Dlatego konwertujemy go do wielokata i rysujemy ogolnym algorytmem.</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                std::vector&lt;Point2D&gt; verts = {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    arg.topLeft,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    <a class="code hl_class" href="class_point2_d.html">Point2D</a>(arg.topLeft.x + arg.width, arg.topLeft.y),</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    <a class="code hl_class" href="class_point2_d.html">Point2D</a>(arg.topLeft.x + arg.width, arg.topLeft.y + arg.height),</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    <a class="code hl_class" href="class_point2_d.html">Point2D</a>(arg.topLeft.x, arg.topLeft.y + arg.height)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                };</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                std::vector&lt;Point2D&gt; worldVerts;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; v : verts) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    worldVerts.push_back(v.Rotate(rot) + pos);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <a class="code hl_class" href="class_polygon.html">Polygon</a> worldPoly(worldVerts);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">isFilled</a>) renderer.<a class="code hl_function" href="class_renderer.html#ab490ab43fc8504ceb5d8347930b844bf">Fill</a>(worldPoly, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordflow">else</span> renderer.<a class="code hl_function" href="class_renderer.html#a4122ab041dbc7d1738406fbe5372c351">Draw</a>(worldPoly, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, Triangle&gt;) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="comment">// Trojkat: transformujemy trzy lokalne wierzcholki.</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                <a class="code hl_class" href="class_point2_d.html">Point2D</a> p1 = arg.p1.<a class="code hl_function" href="class_point2_d.html#a6e2140c2864fb60d91d263a4aa4dce00">Rotate</a>(rot) + pos;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <a class="code hl_class" href="class_point2_d.html">Point2D</a> p2 = arg.p2.<a class="code hl_function" href="class_point2_d.html#a6e2140c2864fb60d91d263a4aa4dce00">Rotate</a>(rot) + pos;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                <a class="code hl_class" href="class_point2_d.html">Point2D</a> p3 = arg.p3.<a class="code hl_function" href="class_point2_d.html#a6e2140c2864fb60d91d263a4aa4dce00">Rotate</a>(rot) + pos;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                <a class="code hl_class" href="class_triangle.html">Triangle</a> worldTri(p1, p2, p3);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">isFilled</a>) renderer.<a class="code hl_function" href="class_renderer.html#ab490ab43fc8504ceb5d8347930b844bf">Fill</a>(worldTri, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <span class="keywordflow">else</span> renderer.<a class="code hl_function" href="class_renderer.html#a4122ab041dbc7d1738406fbe5372c351">Draw</a>(worldTri, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, LineSegment&gt;) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                <span class="comment">// Odcinek: transformujemy dwa konce.</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <a class="code hl_class" href="class_point2_d.html">Point2D</a> p1 = arg.p1.<a class="code hl_function" href="class_point2_d.html#a6e2140c2864fb60d91d263a4aa4dce00">Rotate</a>(rot) + pos;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <a class="code hl_class" href="class_point2_d.html">Point2D</a> p2 = arg.p2.<a class="code hl_function" href="class_point2_d.html#a6e2140c2864fb60d91d263a4aa4dce00">Rotate</a>(rot) + pos;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <a class="code hl_class" href="class_line_segment.html">LineSegment</a> worldLine(p1, p2);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                <span class="comment">// Odcinek jest figura 1D, wiec wypelnienie nie ma sensu.</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                renderer.<a class="code hl_function" href="class_renderer.html#a4122ab041dbc7d1738406fbe5372c351">Draw</a>(worldLine, <a class="code hl_variable" href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">color</a>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }, <a class="code hl_variable" href="class_shape_component.html#a9369611f73f766b35ab73883593d8d0b">shape</a>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>};</div>
+</div>
+<div class="ttc" id="a_base_component_8h_html"><div class="ttname"><a href="_base_component_8h.html">BaseComponent.h</a></div></div>
+<div class="ttc" id="a_primitives_8h_html"><div class="ttname"><a href="_primitives_8h.html">Primitives.h</a></div></div>
+<div class="ttc" id="a_renderer_8h_html"><div class="ttname"><a href="_renderer_8h.html">Renderer.h</a></div></div>
+<div class="ttc" id="aclass_base_component_html"><div class="ttname"><a href="class_base_component.html">BaseComponent</a></div><div class="ttdoc">Bazowa klasa komponentu w architekturze ECS-like (kompozycja obiektu).</div><div class="ttdef"><b>Definicja</b> <a href="_base_component_8h_source.html#l00011">BaseComponent.h:11</a></div></div>
+<div class="ttc" id="aclass_base_component_html_a57d1c19f73e2cc486eca358114d3103e"><div class="ttname"><a href="class_base_component.html#a57d1c19f73e2cc486eca358114d3103e">BaseComponent::gameObject</a></div><div class="ttdeci">GameObject * gameObject</div><div class="ttdoc">Wskaznik na obiekt, do ktorego komponent jest przypiety.</div><div class="ttdef"><b>Definicja</b> <a href="_base_component_8h_source.html#l00018">BaseComponent.h:18</a></div></div>
+<div class="ttc" id="aclass_circle_html"><div class="ttname"><a href="class_circle.html">Circle</a></div><div class="ttdoc">Kolo/okrag zdefiniowany przez srodek i promien.</div><div class="ttdef"><b>Definicja</b> <a href="_primitives_8h_source.html#l00065">Primitives.h:65</a></div></div>
+<div class="ttc" id="aclass_line_segment_html"><div class="ttname"><a href="class_line_segment.html">LineSegment</a></div><div class="ttdoc">Odcinek zdefiniowany przez dwa punkty koncowe.</div><div class="ttdef"><b>Definicja</b> <a href="_primitives_8h_source.html#l00009">Primitives.h:9</a></div></div>
+<div class="ttc" id="aclass_point2_d_html"><div class="ttname"><a href="class_point2_d.html">Point2D</a></div><div class="ttdoc">Prosta struktura wektora/punktu 2D z podstawowymi operacjami.</div><div class="ttdef"><b>Definicja</b> <a href="_point2_d_8h_source.html#l00007">Point2D.h:7</a></div></div>
+<div class="ttc" id="aclass_point2_d_html_a6e2140c2864fb60d91d263a4aa4dce00"><div class="ttname"><a href="class_point2_d.html#a6e2140c2864fb60d91d263a4aa4dce00">Point2D::Rotate</a></div><div class="ttdeci">Point2D Rotate(float angleRadians) const</div><div class="ttdoc">Obraca punkt wokol poczatku ukladu (0,0).</div><div class="ttdef"><b>Definicja</b> <a href="_point2_d_8cpp_source.html#l00033">Point2D.cpp:33</a></div></div>
+<div class="ttc" id="aclass_polygon_html"><div class="ttname"><a href="class_polygon.html">Polygon</a></div><div class="ttdoc">Wielokat opisany przez liste wierzcholkow.</div><div class="ttdef"><b>Definicja</b> <a href="_primitives_8h_source.html#l00082">Primitives.h:82</a></div></div>
+<div class="ttc" id="aclass_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">Renderer programowy oparty o bufor pikseli RGBA.</div><div class="ttdef"><b>Definicja</b> <a href="_renderer_8h_source.html#l00016">Renderer.h:16</a></div></div>
+<div class="ttc" id="aclass_renderer_html_a4122ab041dbc7d1738406fbe5372c351"><div class="ttname"><a href="class_renderer.html#a4122ab041dbc7d1738406fbe5372c351">Renderer::Draw</a></div><div class="ttdeci">void Draw(const LineSegment &amp;line, sf::Color color)</div><div class="ttdoc">Rysuje kontur odcinka.</div><div class="ttdef"><b>Definicja</b> <a href="_renderer_8cpp_source.html#l00051">Renderer.cpp:51</a></div></div>
+<div class="ttc" id="aclass_renderer_html_ab490ab43fc8504ceb5d8347930b844bf"><div class="ttname"><a href="class_renderer.html#ab490ab43fc8504ceb5d8347930b844bf">Renderer::Fill</a></div><div class="ttdeci">void Fill(const Triangle &amp;triangle, sf::Color color)</div><div class="ttdoc">Wypelnia trojkat.</div><div class="ttdef"><b>Definicja</b> <a href="_renderer_8cpp_source.html#l00152">Renderer.cpp:152</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_a0a769e760610d056453adfaeafa37868"><div class="ttname"><a href="class_shape_component.html#a0a769e760610d056453adfaeafa37868">ShapeComponent::Draw</a></div><div class="ttdeci">void Draw(Renderer &amp;renderer) override</div><div class="ttdoc">Rysuje figure po transformacji do przestrzeni swiata.</div><div class="ttdef"><b>Definicja</b> <a href="#l00064">ShapeComponent.h:64</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_a197d01a3cf13cdac60af345bc5c4134f"><div class="ttname"><a href="class_shape_component.html#a197d01a3cf13cdac60af345bc5c4134f">ShapeComponent::SetShape</a></div><div class="ttdeci">void SetShape(ShapeType newShape)</div><div class="ttdoc">Podmienia przechowywana figure.</div><div class="ttdef"><b>Definicja</b> <a href="#l00056">ShapeComponent.h:56</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_a9369611f73f766b35ab73883593d8d0b"><div class="ttname"><a href="class_shape_component.html#a9369611f73f766b35ab73883593d8d0b">ShapeComponent::shape</a></div><div class="ttdeci">ShapeType shape</div><div class="ttdoc">Figura lokalna przypieta do obiektu.</div><div class="ttdef"><b>Definicja</b> <a href="#l00022">ShapeComponent.h:22</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_aaa54198dcdfc3afdbfefdcb6ebd5dccf"><div class="ttname"><a href="class_shape_component.html#aaa54198dcdfc3afdbfefdcb6ebd5dccf">ShapeComponent::isFilled</a></div><div class="ttdeci">bool isFilled</div><div class="ttdoc">Flaga wyboru trybu: kontur lub wypelnienie.</div><div class="ttdef"><b>Definicja</b> <a href="#l00024">ShapeComponent.h:24</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_ace342170525fd41b4375603102e2a3c9"><div class="ttname"><a href="class_shape_component.html#ace342170525fd41b4375603102e2a3c9">ShapeComponent::color</a></div><div class="ttdeci">sf::Color color</div><div class="ttdoc">Kolor rysowania figury.</div><div class="ttdef"><b>Definicja</b> <a href="#l00023">ShapeComponent.h:23</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_adb544e1bf9640e6b9206f558af44840c"><div class="ttname"><a href="class_shape_component.html#adb544e1bf9640e6b9206f558af44840c">ShapeComponent::SetColor</a></div><div class="ttdeci">void SetColor(sf::Color newColor)</div><div class="ttdoc">Ustawia nowy kolor figury.</div><div class="ttdef"><b>Definicja</b> <a href="#l00040">ShapeComponent.h:40</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_adc4486ec24191d8c196fc81ebac6693b"><div class="ttname"><a href="class_shape_component.html#adc4486ec24191d8c196fc81ebac6693b">ShapeComponent::ShapeComponent</a></div><div class="ttdeci">ShapeComponent(ShapeType s, sf::Color c, bool filled=false)</div><div class="ttdoc">Tworzy komponent ksztaltu.</div><div class="ttdef"><b>Definicja</b> <a href="#l00033">ShapeComponent.h:33</a></div></div>
+<div class="ttc" id="aclass_shape_component_html_aefae19dac1803241faef24bb5c3997a5"><div class="ttname"><a href="class_shape_component.html#aefae19dac1803241faef24bb5c3997a5">ShapeComponent::GetColor</a></div><div class="ttdeci">sf::Color GetColor() const</div><div class="ttdoc">Zwraca aktualny kolor figury.</div><div class="ttdef"><b>Definicja</b> <a href="#l00048">ShapeComponent.h:48</a></div></div>
+<div class="ttc" id="aclass_triangle_html"><div class="ttname"><a href="class_triangle.html">Triangle</a></div><div class="ttdoc">Trojkat zdefiniowany przez trzy wierzcholki.</div><div class="ttdef"><b>Definicja</b> <a href="_primitives_8h_source.html#l00026">Primitives.h:26</a></div></div>
+<div class="ttc" id="agroup__module__components_html_gabeb1ebed68da6ccda801c7a8717e0fe0"><div class="ttname"><a href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a></div><div class="ttdeci">std::variant&lt; LineSegment, Triangle, Rectangle, Polygon, Circle &gt; ShapeType</div><div class="ttdoc">Wariant przechowujacy jedna z obslugiwanych figur geometrycznych.</div><div class="ttdef"><b>Definicja</b> <a href="#l00011">ShapeComponent.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_d61b2222c5a327709a6efbaf33ca5bc9.html">Components</a></li><li class="navelem"><a class="el" href="_shape_component_8h.html">ShapeComponent.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

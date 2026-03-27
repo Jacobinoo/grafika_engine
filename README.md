@@ -109,6 +109,19 @@ Here are some useful resources if you want to learn more about CMake:
 - [How to Use CMake Without the Agonizing Pain - Part 2](https://alexreinking.com/blog/how-to-use-cmake-without-the-agonizing-pain-part-2.html)
 - [Better CMake YouTube series by Jefferon Amstutz](https://www.youtube.com/playlist?list=PL8i3OhJb4FNV10aIZ8oF0AA46HgA2ed8g)
 
+## Doxygen Documentation
+
+This repository contains a ready-to-use Doxygen configuration file and module split.
+
+1. Generate docs from the project root:
+   ```
+   doxygen Doxyfile
+   ```
+2. Open generated HTML documentation:
+   ```
+   docs/output/html/index.html
+   ```
+
 ## License
 
 The source code is dual licensed under Public Domain and MIT -- choose whichever you prefer.

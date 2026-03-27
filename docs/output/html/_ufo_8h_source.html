@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Plik źródłowy Ufo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_ufo_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Ufo.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_ufo_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_game_object_8h.html">../Engine/GameObject.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_engine_8h.html">../Engine/Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_shape_component_8h.html">../Engine/Components/ShapeComponent.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_input_8h.html">../Engine/Input/Input.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_ufo.html">   11</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ufo.html#ab12d616fb6e8d8a2e0963f9d3fd6f779">Ufo</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_game_object.html#ae3dccb04f4e6052124213b5b7bd6bb37">GameObject</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_ufo.html#a96dbd7b14ef96a7aeb91cc94852d5277">   13</a></span>    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ufo.html#a96dbd7b14ef96a7aeb91cc94852d5277">ROTATION_SPEED</a> = 0.1f; </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_ufo.html#a0bbd70436e0df571fe62f6c87b3b0143">   14</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ufo.html#a0bbd70436e0df571fe62f6c87b3b0143">thrust</a> = 0.15f;              </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_ufo.html#a0898608cff8008f8deae874cea44d82f">   15</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ufo.html#a0898608cff8008f8deae874cea44d82f">friction</a> = 0.98f;            </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_ufo.html#ab12d616fb6e8d8a2e0963f9d3fd6f779">   23</a></span>    <a class="code hl_function" href="class_ufo.html#ab12d616fb6e8d8a2e0963f9d3fd6f779">Ufo</a>(<span class="keywordtype">float</span> startX, <span class="keywordtype">float</span> startY) : <a class="code hl_function" href="class_game_object.html#ae3dccb04f4e6052124213b5b7bd6bb37">GameObject</a>(<span class="stringliteral">&quot;Player&quot;</span>, startX, startY) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_variable" href="class_game_object.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a> = <span class="stringliteral">&quot;Player&quot;</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// Okrag z lokalnym srodkiem w (0,0) obraca sie i przesuwa razem z obiektem.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_class" href="class_circle.html">Circle</a> circle = <a class="code hl_class" href="class_circle.html">Circle</a>({0.0f, 0.0f}, 20.0f);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_function" href="class_game_object.html#a00fbdd00a95db80ff0fce40ccb6d2ca6">AddComponent</a>(std::make_unique&lt;ShapeComponent&gt;(circle, Color::Magenta, <span class="keyword">true</span>));</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_function" href="class_game_object.html#a00fbdd00a95db80ff0fce40ccb6d2ca6">AddComponent</a>(std::make_unique&lt;ShapeComponent&gt;(circle, Color::Black, <span class="keyword">false</span>));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width = <a class="code hl_function" href="class_engine.html#a9734c32adc3bde2e41df568e8cfa7ead">Engine::GetInstance</a>().<a class="code hl_function" href="class_engine.html#a3216f7b1999817d462ed0c429e354a50">GetScreenWidth</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height = <a class="code hl_function" href="class_engine.html#a9734c32adc3bde2e41df568e8cfa7ead">Engine::GetInstance</a>().<a class="code hl_function" href="class_engine.html#a0a170d26815af569a0872601c8d43600">GetScreenHeight</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_ufo.html#a31c1ac752b89851985875fc9f5481be9">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ufo.html#a31c1ac752b89851985875fc9f5481be9">Update</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_input.html#a314366be2b3260480d1acaf832971e4d">Input::IsActionHeld</a>(<span class="stringliteral">&quot;UfoMoveRight&quot;</span>)) <a class="code hl_variable" href="class_game_object.html#aae6b1449006f9bbca7c6456676659828">angle</a> += <a class="code hl_variable" href="class_ufo.html#a96dbd7b14ef96a7aeb91cc94852d5277">ROTATION_SPEED</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_input.html#a314366be2b3260480d1acaf832971e4d">Input::IsActionHeld</a>(<span class="stringliteral">&quot;UfoMoveLeft&quot;</span>)) <a class="code hl_variable" href="class_game_object.html#aae6b1449006f9bbca7c6456676659828">angle</a> -= <a class="code hl_variable" href="class_ufo.html#a96dbd7b14ef96a7aeb91cc94852d5277">ROTATION_SPEED</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">auto</span> shapeComp = <a class="code hl_function" href="class_game_object.html#a5ba3b458e6bee6ea5aedd5c8cdeabf18">GetComponent&lt;ShapeComponent&gt;</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">if</span>(shapeComp) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <a class="code hl_class" href="class_engine.html">Engine</a>&amp; engine = <a class="code hl_function" href="class_engine.html#a9734c32adc3bde2e41df568e8cfa7ead">Engine::GetInstance</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <a class="code hl_class" href="class_point2_d.html">Point2D</a> mousePos = <a class="code hl_function" href="class_input.html#a792b7cc6874bae9f25aab0e8b8d03ccf">Input::GetMousePosition</a>(engine.<a class="code hl_function" href="class_engine.html#a056fc21b79a211e936ded4fe273948c9">GetWindow</a>());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <a class="code hl_class" href="class_point2_d.html">Point2D</a> pos = <a class="code hl_function" href="class_game_object.html#a1d54ef722447d59905055b053e38ade7">GetWorldPosition</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="comment">// Hit-test jest uproszczony do AABB 20x20 wokol pozycji obiektu.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// To szybkie rozwiazanie demonstracyjne, ale nieprecyzyjne dla okregu.</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordtype">bool</span> isHovered = (mousePos.<a class="code hl_variable" href="class_point2_d.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">x</a> &gt;= pos.<a class="code hl_variable" href="class_point2_d.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">x</a> &amp;&amp; mousePos.<a class="code hl_variable" href="class_point2_d.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">x</a> &lt;= pos.<a class="code hl_variable" href="class_point2_d.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">x</a> + 20.0f &amp;&amp;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                mousePos.<a class="code hl_variable" href="class_point2_d.html#a989485fd2d8026ceec5d57e8c7e629ab">y</a> &gt;= pos.<a class="code hl_variable" href="class_point2_d.html#a989485fd2d8026ceec5d57e8c7e629ab">y</a> &amp;&amp; mousePos.<a class="code hl_variable" href="class_point2_d.html#a989485fd2d8026ceec5d57e8c7e629ab">y</a> &lt;= pos.<a class="code hl_variable" href="class_point2_d.html#a989485fd2d8026ceec5d57e8c7e629ab">y</a> + 20.0f);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">if</span> (isHovered &amp;&amp; <a class="code hl_function" href="class_input.html#a13eff30fa3f98aaadb29ba76460a863d">Input::IsActionJustPressed</a>(<span class="stringliteral">&quot;Click&quot;</span>)) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                shapeComp-&gt;SetColor(Color::Yellow);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="class_game_object.html#a1bd14aa169f501f94f1721943d716535">GameObject::Update</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="a_game_object_8h_html"><div class="ttname"><a href="_game_object_8h.html">GameObject.h</a></div></div>
+<div class="ttc" id="a_input_8h_html"><div class="ttname"><a href="_input_8h.html">Input.h</a></div></div>
+<div class="ttc" id="a_shape_component_8h_html"><div class="ttname"><a href="_shape_component_8h.html">ShapeComponent.h</a></div></div>
+<div class="ttc" id="aclass_circle_html"><div class="ttname"><a href="class_circle.html">Circle</a></div><div class="ttdoc">Kolo/okrag zdefiniowany przez srodek i promien.</div><div class="ttdef"><b>Definicja</b> <a href="_primitives_8h_source.html#l00065">Primitives.h:65</a></div></div>
+<div class="ttc" id="aclass_engine_html"><div class="ttname"><a href="class_engine.html">Engine</a></div><div class="ttdoc">Glowna klasa silnika zarzadzajaca petla gry, oknem i obiektami sceny.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00040">Engine.h:40</a></div></div>
+<div class="ttc" id="aclass_engine_html_a056fc21b79a211e936ded4fe273948c9"><div class="ttname"><a href="class_engine.html#a056fc21b79a211e936ded4fe273948c9">Engine::GetWindow</a></div><div class="ttdeci">const sf::RenderWindow &amp; GetWindow() const</div><div class="ttdoc">Zwraca referencje tylko-do-odczytu do okna SFML.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8cpp_source.html#l00165">Engine.cpp:165</a></div></div>
+<div class="ttc" id="aclass_engine_html_a0a170d26815af569a0872601c8d43600"><div class="ttname"><a href="class_engine.html#a0a170d26815af569a0872601c8d43600">Engine::GetScreenHeight</a></div><div class="ttdeci">unsigned int GetScreenHeight() const</div><div class="ttdoc">Zwraca wysokosc aktualnego okna w pikselach.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8cpp_source.html#l00171">Engine.cpp:171</a></div></div>
+<div class="ttc" id="aclass_engine_html_a3216f7b1999817d462ed0c429e354a50"><div class="ttname"><a href="class_engine.html#a3216f7b1999817d462ed0c429e354a50">Engine::GetScreenWidth</a></div><div class="ttdeci">unsigned int GetScreenWidth() const</div><div class="ttdoc">Zwraca szerokosc aktualnego okna w pikselach.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8cpp_source.html#l00169">Engine.cpp:169</a></div></div>
+<div class="ttc" id="aclass_engine_html_a9734c32adc3bde2e41df568e8cfa7ead"><div class="ttname"><a href="class_engine.html#a9734c32adc3bde2e41df568e8cfa7ead">Engine::GetInstance</a></div><div class="ttdeci">static Engine &amp; GetInstance()</div><div class="ttdoc">Zwraca globalna instancje silnika.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00068">Engine.h:68</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a00fbdd00a95db80ff0fce40ccb6d2ca6"><div class="ttname"><a href="class_game_object.html#a00fbdd00a95db80ff0fce40ccb6d2ca6">GameObject::AddComponent</a></div><div class="ttdeci">void AddComponent(std::unique_ptr&lt; BaseComponent &gt; comp)</div><div class="ttdoc">Dodaje komponent i uruchamia jego inicjalizacje.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8cpp_source.html#l00065">GameObject.cpp:65</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a1bd14aa169f501f94f1721943d716535"><div class="ttname"><a href="class_game_object.html#a1bd14aa169f501f94f1721943d716535">GameObject::Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdoc">Aktualizuje komponenty i dzieci obiektu.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8cpp_source.html#l00014">GameObject.cpp:14</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a1d54ef722447d59905055b053e38ade7"><div class="ttname"><a href="class_game_object.html#a1d54ef722447d59905055b053e38ade7">GameObject::GetWorldPosition</a></div><div class="ttdeci">Point2D GetWorldPosition() const</div><div class="ttdoc">Wyznacza pozycje obiektu w przestrzeni swiata.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8cpp_source.html#l00074">GameObject.cpp:74</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a5ba3b458e6bee6ea5aedd5c8cdeabf18"><div class="ttname"><a href="class_game_object.html#a5ba3b458e6bee6ea5aedd5c8cdeabf18">GameObject::GetComponent</a></div><div class="ttdeci">T * GetComponent()</div><div class="ttdoc">Zwraca pierwszy komponent zadanego typu.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00080">GameObject.h:80</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a66891b8bfd67373dde0155ae7808bbb4"><div class="ttname"><a href="class_game_object.html#a66891b8bfd67373dde0155ae7808bbb4">GameObject::tag</a></div><div class="ttdeci">std::string tag</div><div class="ttdoc">Etykieta obiektu uzywana np.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00020">GameObject.h:20</a></div></div>
+<div class="ttc" id="aclass_game_object_html_aae6b1449006f9bbca7c6456676659828"><div class="ttname"><a href="class_game_object.html#aae6b1449006f9bbca7c6456676659828">GameObject::angle</a></div><div class="ttdeci">float angle</div><div class="ttdoc">Lokalny kat obrotu obiektu (w radianach).</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00029">GameObject.h:29</a></div></div>
+<div class="ttc" id="aclass_game_object_html_ae3dccb04f4e6052124213b5b7bd6bb37"><div class="ttname"><a href="class_game_object.html#ae3dccb04f4e6052124213b5b7bd6bb37">GameObject::GameObject</a></div><div class="ttdeci">GameObject(const std::string &amp;tag=&quot;Default&quot;, float x=0.0f, float y=0.0f)</div><div class="ttdoc">Tworzy obiekt gry z podstawowa transformacja.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8cpp_source.html#l00007">GameObject.cpp:7</a></div></div>
+<div class="ttc" id="aclass_input_html_a13eff30fa3f98aaadb29ba76460a863d"><div class="ttname"><a href="class_input.html#a13eff30fa3f98aaadb29ba76460a863d">Input::IsActionJustPressed</a></div><div class="ttdeci">static bool IsActionJustPressed(const std::string &amp;actionName)</div><div class="ttdoc">Sprawdza zbocze narastajace (fresh press) akcji.</div><div class="ttdef"><b>Definicja</b> <a href="_input_8cpp_source.html#l00063">Input.cpp:63</a></div></div>
+<div class="ttc" id="aclass_input_html_a314366be2b3260480d1acaf832971e4d"><div class="ttname"><a href="class_input.html#a314366be2b3260480d1acaf832971e4d">Input::IsActionHeld</a></div><div class="ttdeci">static bool IsActionHeld(const std::string &amp;actionName)</div><div class="ttdoc">Sprawdza czy akcja jest aktualnie przytrzymywana.</div><div class="ttdef"><b>Definicja</b> <a href="_input_8cpp_source.html#l00082">Input.cpp:82</a></div></div>
+<div class="ttc" id="aclass_input_html_a792b7cc6874bae9f25aab0e8b8d03ccf"><div class="ttname"><a href="class_input.html#a792b7cc6874bae9f25aab0e8b8d03ccf">Input::GetMousePosition</a></div><div class="ttdeci">static Point2D GetMousePosition(const sf::RenderWindow &amp;window)</div><div class="ttdoc">Zwraca pozycje kursora myszy wzgledem danego okna.</div><div class="ttdef"><b>Definicja</b> <a href="_input_8cpp_source.html#l00099">Input.cpp:99</a></div></div>
+<div class="ttc" id="aclass_point2_d_html"><div class="ttname"><a href="class_point2_d.html">Point2D</a></div><div class="ttdoc">Prosta struktura wektora/punktu 2D z podstawowymi operacjami.</div><div class="ttdef"><b>Definicja</b> <a href="_point2_d_8h_source.html#l00007">Point2D.h:7</a></div></div>
+<div class="ttc" id="aclass_point2_d_html_a2a5ef0ad00bc9e912a9aefcedf004cc4"><div class="ttname"><a href="class_point2_d.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">Point2D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">Wspolrzedna pozioma.</div><div class="ttdef"><b>Definicja</b> <a href="_point2_d_8h_source.html#l00009">Point2D.h:9</a></div></div>
+<div class="ttc" id="aclass_point2_d_html_a989485fd2d8026ceec5d57e8c7e629ab"><div class="ttname"><a href="class_point2_d.html#a989485fd2d8026ceec5d57e8c7e629ab">Point2D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">Wspolrzedna pionowa.</div><div class="ttdef"><b>Definicja</b> <a href="_point2_d_8h_source.html#l00010">Point2D.h:10</a></div></div>
+<div class="ttc" id="aclass_ufo_html_a0898608cff8008f8deae874cea44d82f"><div class="ttname"><a href="class_ufo.html#a0898608cff8008f8deae874cea44d82f">Ufo::friction</a></div><div class="ttdeci">float friction</div><div class="ttdoc">Tlumienie ruchu (zarezerwowane pod rozwoj).</div><div class="ttdef"><b>Definicja</b> <a href="#l00015">Ufo.h:15</a></div></div>
+<div class="ttc" id="aclass_ufo_html_a0bbd70436e0df571fe62f6c87b3b0143"><div class="ttname"><a href="class_ufo.html#a0bbd70436e0df571fe62f6c87b3b0143">Ufo::thrust</a></div><div class="ttdeci">float thrust</div><div class="ttdoc">Sila ciagu (zarezerwowana pod rozwoj).</div><div class="ttdef"><b>Definicja</b> <a href="#l00014">Ufo.h:14</a></div></div>
+<div class="ttc" id="aclass_ufo_html_a31c1ac752b89851985875fc9f5481be9"><div class="ttname"><a href="class_ufo.html#a31c1ac752b89851985875fc9f5481be9">Ufo::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">Aktualizuje sterowanie i logike interakcji kursora z UFO.</div><div class="ttdef"><b>Definicja</b> <a href="#l00042">Ufo.h:42</a></div></div>
+<div class="ttc" id="aclass_ufo_html_a96dbd7b14ef96a7aeb91cc94852d5277"><div class="ttname"><a href="class_ufo.html#a96dbd7b14ef96a7aeb91cc94852d5277">Ufo::ROTATION_SPEED</a></div><div class="ttdeci">const float ROTATION_SPEED</div><div class="ttdoc">Predkosc obrotu UFO [rad/klatke].</div><div class="ttdef"><b>Definicja</b> <a href="#l00013">Ufo.h:13</a></div></div>
+<div class="ttc" id="aclass_ufo_html_ab12d616fb6e8d8a2e0963f9d3fd6f779"><div class="ttname"><a href="class_ufo.html#ab12d616fb6e8d8a2e0963f9d3fd6f779">Ufo::Ufo</a></div><div class="ttdeci">Ufo(float startX, float startY)</div><div class="ttdoc">Tworzy UFO w zadanej pozycji.</div><div class="ttdef"><b>Definicja</b> <a href="#l00023">Ufo.h:23</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_73de25904e814b5556784c7a34089373.html">DemoMyGame</a></li><li class="navelem"><a class="el" href="_ufo_8h.html">Ufo.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

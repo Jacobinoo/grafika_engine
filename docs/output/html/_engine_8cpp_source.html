@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Plik źródłowy Engine.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_engine_8cpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Engine.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_engine_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_i_game_8h.html">IGame.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_input_8h.html">Input/Input.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_renderer_8h.html">Renderer/Renderer.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;SFML/Window/Event.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;SFML/Window/VideoMode.hpp&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;SFML/Window/WindowEnums.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_engine.html#aeab6fad6f1d71d25c233fc6639bc4a2d">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#aeab6fad6f1d71d25c233fc6639bc4a2d">Engine::Init</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_engine_config.html">EngineConfig</a>&amp; config) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// 1) Ustawienia domyslne okna.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> windowStyle = sf::Style::Default;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    sf::State windowState = sf::State::Windowed;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// 2) Parametry aktualnego trybu pulpitu.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// Tworzymy tryb bazowy z zadanej szerokosci/wysokosci.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    sf::VideoMode videoMode({(<span class="keywordtype">unsigned</span> int)config.<a class="code hl_variable" href="struct_engine_config.html#ae32918d720e2dacc0341a19783bc25d2">width</a>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)config.<a class="code hl_variable" href="struct_engine_config.html#a46f96d8751df40f9aa1777a896e79289">height</a>}, desktop.bitsPerPixel);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// 3) Obsluga trybu pelnoekranowego.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (config.<a class="code hl_variable" href="struct_engine_config.html#a368c018d7b370ced76815974a36d748e">windowMode</a> == <a class="code hl_enumvalue" href="group__module__engine.html#gga5773202ab7ffd1746de9d527927198a3ab89c3d897b196ffff1537331bc659a97">WindowMode::FULLSCREEN</a>) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        windowState = sf::State::Fullscreen;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">bool</span> isModeSupported = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">// Sprawdzamy, czy zadany tryb jest wspierany przez monitor.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        std::vector&lt;sf::VideoMode&gt; modes = sf::VideoMode::getFullscreenModes();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; mode : modes) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">if</span> (mode.size.x == config.<a class="code hl_variable" href="struct_engine_config.html#ae32918d720e2dacc0341a19783bc25d2">width</a> &amp;&amp; mode.size.y == config.<a class="code hl_variable" href="struct_engine_config.html#a46f96d8751df40f9aa1777a896e79289">height</a>) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                isModeSupported = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                videoMode = mode;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="comment">// Fallback: przechodzimy do natywnego trybu pulpitu.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span> (!isModeSupported) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;[Engine] OSTRZEZENIE: Rozdzielczosc &quot;</span> &lt;&lt; config.<a class="code hl_variable" href="struct_engine_config.html#ae32918d720e2dacc0341a19783bc25d2">width</a> &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; config.<a class="code hl_variable" href="struct_engine_config.html#a46f96d8751df40f9aa1777a896e79289">height</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                      &lt;&lt; <span class="stringliteral">&quot; nie jest obslugiwana w Fullscreen na tym monitorze!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;[Engine] Wymuszam natywna rozdzielczosc pulpitu: &quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                      &lt;&lt; desktop.size.x &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; desktop.size.y &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            videoMode = desktop; </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (config.<a class="code hl_variable" href="struct_engine_config.html#a368c018d7b370ced76815974a36d748e">windowMode</a> == <a class="code hl_enumvalue" href="group__module__engine.html#gga5773202ab7ffd1746de9d527927198a3af744a3ac16b1ac0bc9df0aa02cc1a038">WindowMode::BORDERLESS</a>) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        windowStyle = sf::Style::None;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// 4) Tworzenie okna.</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a> = std::make_unique&lt;sf::RenderWindow&gt;(videoMode, config.<a class="code hl_variable" href="struct_engine_config.html#ac09c34d8d703373460982fd075a26010">title</a>, windowStyle, windowState);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// 5) Konfiguracja FPS.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;setVerticalSyncEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;setFramerateLimit(config.<a class="code hl_variable" href="struct_engine_config.html#a1146ca6cb5f1a672a1e286567320b834">framerateLimit</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_variable" href="class_engine.html#a0dbed997378c076e7288c833912c4256">targetFramerate</a> = config.<a class="code hl_variable" href="struct_engine_config.html#a1146ca6cb5f1a672a1e286567320b834">framerateLimit</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span>(config.<a class="code hl_variable" href="struct_engine_config.html#a1146ca6cb5f1a672a1e286567320b834">framerateLimit</a> == 0) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;setFramerateLimit(60);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_variable" href="class_engine.html#a0dbed997378c076e7288c833912c4256">targetFramerate</a> = 60;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// 6) Inicjalizacja renderera programowego.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_variable" href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">renderer</a> = std::make_unique&lt;Renderer&gt;(videoMode.size.x, videoMode.size.y);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// Rezerwacja redukuje realokacje i fragmentacje pamieci podczas tworzenia obiektow.</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>.reserve(1000);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_variable" href="class_engine.html#a1e7ed729bf4089b3f3a63591bddb6fcc">objectQueue</a>.reserve(100);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_variable" href="class_engine.html#a3297bab216a17dae935909a63b889379">isRunning</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_engine.html#af54381a5f9fe4525a3be12201c0d8712">   81</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#af54381a5f9fe4525a3be12201c0d8712">Engine::Run</a>(<a class="code hl_class" href="class_i_game.html">IGame</a>* game) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span>(game) game-&gt;<a class="code hl_function" href="class_i_game.html#a01b8f9f47aa76e807e79495f0488daac">Start</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;isOpen() &amp;&amp; <a class="code hl_variable" href="class_engine.html#a3297bab216a17dae935909a63b889379">isRunning</a>) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="comment">// 1) Obsluga zdarzen systemowych.</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">while</span> (<span class="keyword">const</span> std::optional event = <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;pollEvent()) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">if</span> (event-&gt;is&lt;sf::Event::Closed&gt;()) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <a class="code hl_function" href="class_engine.html#ac703279e3531bc1e668115affceb8c37">Quit</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="comment">// 2) Snapshot wejscia dla tej klatki.</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <a class="code hl_function" href="class_input.html#af80dcfde6dbfe39bf3bc0345c75595ce">Input::Update</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="comment">// 3) Kod gry uzytkownika.</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span> (game) game-&gt;<a class="code hl_function" href="class_i_game.html#a907b855228ff86008294e7b8e2938d0a">Update</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="comment">// 4) Aktualizacja aktywnych obiektow.</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; obj : <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>) <span class="keywordflow">if</span> (obj-&gt;isActive) obj-&gt;Update();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="comment">// Kolejka obiektow zapobiega invalidacji iteratorow podczas petli Update().</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; newObj : <a class="code hl_variable" href="class_engine.html#a1e7ed729bf4089b3f3a63591bddb6fcc">objectQueue</a>) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>.push_back(std::move(newObj));</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_variable" href="class_engine.html#a1e7ed729bf4089b3f3a63591bddb6fcc">objectQueue</a>.clear();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="comment">// Remove-erase idiom: liniowe usuniecie obiektow oznaczonych jako nieaktywne.</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>.erase(</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            std::remove_if(<a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>.begin(), <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>.end(),</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                [](<span class="keyword">const</span> std::unique_ptr&lt;GameObject&gt;&amp; obj) { return !obj-&gt;isActive; }),</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>.end()</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        );</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="comment">// 5) Render klatki.</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;clear(<a class="code hl_variable" href="class_engine.html#aba4b1312e2861e0e48dc40be804b6b9d">currentBackgroundColor</a>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_variable" href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">renderer</a>-&gt;Clear(<a class="code hl_variable" href="class_engine.html#aba4b1312e2861e0e48dc40be804b6b9d">currentBackgroundColor</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; obj : <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            obj-&gt;Render(*<a class="code hl_variable" href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">renderer</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <a class="code hl_variable" href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">renderer</a>-&gt;RenderToWindow(*<a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;display();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="comment">// Sprzatanie po zakonczeniu petli.</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_function" href="class_engine.html#a22d4025152638699b82fb493cf30b5a4">ClearScene</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>) <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>.reset();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">renderer</a>) <a class="code hl_variable" href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">renderer</a>.reset();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_engine.html#a4eb6671221c4dcb51cfb7a1e43630105">  135</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#a4eb6671221c4dcb51cfb7a1e43630105">Engine::SetBackgroundColor</a>(<a class="code hl_typedef" href="_engine_8h.html#a3d71839f2e47e378f90e2958c5aa771f">Color</a> color) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_variable" href="class_engine.html#aba4b1312e2861e0e48dc40be804b6b9d">currentBackgroundColor</a> = color;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_engine.html#a6ab6e92ccaf7bb73f0617145107d97d4">  142</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#a6ab6e92ccaf7bb73f0617145107d97d4">Engine::Instantiate</a>(std::unique_ptr&lt;GameObject&gt; obj) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <a class="code hl_variable" href="class_engine.html#a1e7ed729bf4089b3f3a63591bddb6fcc">objectQueue</a>.push_back(std::move(obj));</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="class_engine.html#ac703279e3531bc1e668115affceb8c37">  149</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#ac703279e3531bc1e668115affceb8c37">Engine::Quit</a>() {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_variable" href="class_engine.html#a3297bab216a17dae935909a63b889379">isRunning</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;isOpen()) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;close();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
+</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="class_engine.html#a22d4025152638699b82fb493cf30b5a4">  159</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_engine.html#a22d4025152638699b82fb493cf30b5a4">Engine::ClearScene</a>() {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_variable" href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">gameObjects</a>.clear();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_variable" href="class_engine.html#a1e7ed729bf4089b3f3a63591bddb6fcc">objectQueue</a>.clear();</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="class_engine.html#a056fc21b79a211e936ded4fe273948c9">  165</a></span><span class="keyword">const</span> sf::RenderWindow&amp; <a class="code hl_function" href="class_engine.html#a056fc21b79a211e936ded4fe273948c9">Engine::GetWindow</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *<a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>; }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_engine.html#a0ecb007b9567c8b386b49aef5bf7d80e">  167</a></span><a class="code hl_class" href="class_renderer.html">Renderer</a>&amp; <a class="code hl_function" href="class_engine.html#a0ecb007b9567c8b386b49aef5bf7d80e">Engine::GetRenderer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *<a class="code hl_variable" href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">renderer</a>; }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="class_engine.html#a3216f7b1999817d462ed0c429e354a50">  169</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_engine.html#a3216f7b1999817d462ed0c429e354a50">Engine::GetScreenWidth</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;getSize().x;};</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_engine.html#a0a170d26815af569a0872601c8d43600">  171</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_engine.html#a0a170d26815af569a0872601c8d43600">Engine::GetScreenHeight</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">window</a>-&gt;getSize().y;};</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="class_engine.html#a50de1a00638137c1d4dd69647f1c2027">  173</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_engine.html#a50de1a00638137c1d4dd69647f1c2027">Engine::GetTargetFramerate</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_engine.html#a0dbed997378c076e7288c833912c4256">targetFramerate</a>; }</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="a_engine_8h_html_a3d71839f2e47e378f90e2958c5aa771f"><div class="ttname"><a href="_engine_8h.html#a3d71839f2e47e378f90e2958c5aa771f">Color</a></div><div class="ttdeci">sf::Color Color</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00010">Engine.h:10</a></div></div>
+<div class="ttc" id="a_i_game_8h_html"><div class="ttname"><a href="_i_game_8h.html">IGame.h</a></div></div>
+<div class="ttc" id="a_input_8h_html"><div class="ttname"><a href="_input_8h.html">Input.h</a></div></div>
+<div class="ttc" id="a_renderer_8h_html"><div class="ttname"><a href="_renderer_8h.html">Renderer.h</a></div></div>
+<div class="ttc" id="aclass_engine_html_a056fc21b79a211e936ded4fe273948c9"><div class="ttname"><a href="class_engine.html#a056fc21b79a211e936ded4fe273948c9">Engine::GetWindow</a></div><div class="ttdeci">const sf::RenderWindow &amp; GetWindow() const</div><div class="ttdoc">Zwraca referencje tylko-do-odczytu do okna SFML.</div><div class="ttdef"><b>Definicja</b> <a href="#l00165">Engine.cpp:165</a></div></div>
+<div class="ttc" id="aclass_engine_html_a0a170d26815af569a0872601c8d43600"><div class="ttname"><a href="class_engine.html#a0a170d26815af569a0872601c8d43600">Engine::GetScreenHeight</a></div><div class="ttdeci">unsigned int GetScreenHeight() const</div><div class="ttdoc">Zwraca wysokosc aktualnego okna w pikselach.</div><div class="ttdef"><b>Definicja</b> <a href="#l00171">Engine.cpp:171</a></div></div>
+<div class="ttc" id="aclass_engine_html_a0dbed997378c076e7288c833912c4256"><div class="ttname"><a href="class_engine.html#a0dbed997378c076e7288c833912c4256">Engine::targetFramerate</a></div><div class="ttdeci">unsigned int targetFramerate</div><div class="ttdoc">Aktualnie ustawiony limit klatek na sekunde.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00044">Engine.h:44</a></div></div>
+<div class="ttc" id="aclass_engine_html_a0ecb007b9567c8b386b49aef5bf7d80e"><div class="ttname"><a href="class_engine.html#a0ecb007b9567c8b386b49aef5bf7d80e">Engine::GetRenderer</a></div><div class="ttdeci">Renderer &amp; GetRenderer() const</div><div class="ttdoc">Zwraca referencje do obiektu renderera.</div><div class="ttdef"><b>Definicja</b> <a href="#l00167">Engine.cpp:167</a></div></div>
+<div class="ttc" id="aclass_engine_html_a1e7ed729bf4089b3f3a63591bddb6fcc"><div class="ttname"><a href="class_engine.html#a1e7ed729bf4089b3f3a63591bddb6fcc">Engine::objectQueue</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; GameObject &gt; &gt; objectQueue</div><div class="ttdoc">Kolejka obiektow dodawanych bezpiecznie po aktualizacji.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00047">Engine.h:47</a></div></div>
+<div class="ttc" id="aclass_engine_html_a22d4025152638699b82fb493cf30b5a4"><div class="ttname"><a href="class_engine.html#a22d4025152638699b82fb493cf30b5a4">Engine::ClearScene</a></div><div class="ttdeci">void ClearScene()</div><div class="ttdoc">Usuwa wszystkie obiekty gry i czysci kolejke tworzenia.</div><div class="ttdef"><b>Definicja</b> <a href="#l00159">Engine.cpp:159</a></div></div>
+<div class="ttc" id="aclass_engine_html_a2ee6a90e4fceddd64a31581e12ccbc6c"><div class="ttname"><a href="class_engine.html#a2ee6a90e4fceddd64a31581e12ccbc6c">Engine::window</a></div><div class="ttdeci">std::unique_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdoc">Okno SFML odpowiedzialne za prezentacje obrazu.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00042">Engine.h:42</a></div></div>
+<div class="ttc" id="aclass_engine_html_a3216f7b1999817d462ed0c429e354a50"><div class="ttname"><a href="class_engine.html#a3216f7b1999817d462ed0c429e354a50">Engine::GetScreenWidth</a></div><div class="ttdeci">unsigned int GetScreenWidth() const</div><div class="ttdoc">Zwraca szerokosc aktualnego okna w pikselach.</div><div class="ttdef"><b>Definicja</b> <a href="#l00169">Engine.cpp:169</a></div></div>
+<div class="ttc" id="aclass_engine_html_a3297bab216a17dae935909a63b889379"><div class="ttname"><a href="class_engine.html#a3297bab216a17dae935909a63b889379">Engine::isRunning</a></div><div class="ttdeci">bool isRunning</div><div class="ttdoc">Flaga sterujaca petla glowna silnika.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00051">Engine.h:51</a></div></div>
+<div class="ttc" id="aclass_engine_html_a3ed0a27f49d22011813a5f232636cb04"><div class="ttname"><a href="class_engine.html#a3ed0a27f49d22011813a5f232636cb04">Engine::gameObjects</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; GameObject &gt; &gt; gameObjects</div><div class="ttdoc">Aktywne obiekty obecne w scenie.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00046">Engine.h:46</a></div></div>
+<div class="ttc" id="aclass_engine_html_a4eb6671221c4dcb51cfb7a1e43630105"><div class="ttname"><a href="class_engine.html#a4eb6671221c4dcb51cfb7a1e43630105">Engine::SetBackgroundColor</a></div><div class="ttdeci">void SetBackgroundColor(Color color)</div><div class="ttdoc">Ustawia kolor tla renderowanej sceny.</div><div class="ttdef"><b>Definicja</b> <a href="#l00135">Engine.cpp:135</a></div></div>
+<div class="ttc" id="aclass_engine_html_a4f2cad19c998910fbfb4363517f282bf"><div class="ttname"><a href="class_engine.html#a4f2cad19c998910fbfb4363517f282bf">Engine::renderer</a></div><div class="ttdeci">std::unique_ptr&lt; Renderer &gt; renderer</div><div class="ttdoc">Wlasny renderer programowy zapisujacy piksele do bufora.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00043">Engine.h:43</a></div></div>
+<div class="ttc" id="aclass_engine_html_a50de1a00638137c1d4dd69647f1c2027"><div class="ttname"><a href="class_engine.html#a50de1a00638137c1d4dd69647f1c2027">Engine::GetTargetFramerate</a></div><div class="ttdeci">unsigned int GetTargetFramerate() const</div><div class="ttdoc">Zwraca aktualny limit FPS.</div><div class="ttdef"><b>Definicja</b> <a href="#l00173">Engine.cpp:173</a></div></div>
+<div class="ttc" id="aclass_engine_html_a6ab6e92ccaf7bb73f0617145107d97d4"><div class="ttname"><a href="class_engine.html#a6ab6e92ccaf7bb73f0617145107d97d4">Engine::Instantiate</a></div><div class="ttdeci">void Instantiate(std::unique_ptr&lt; GameObject &gt; obj)</div><div class="ttdoc">Dodaje obiekt do sceny w bezpieczny sposob (przez kolejke).</div><div class="ttdef"><b>Definicja</b> <a href="#l00142">Engine.cpp:142</a></div></div>
+<div class="ttc" id="aclass_engine_html_aba4b1312e2861e0e48dc40be804b6b9d"><div class="ttname"><a href="class_engine.html#aba4b1312e2861e0e48dc40be804b6b9d">Engine::currentBackgroundColor</a></div><div class="ttdeci">sf::Color currentBackgroundColor</div><div class="ttdoc">Kolor tla czyszczenia klatki.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00049">Engine.h:49</a></div></div>
+<div class="ttc" id="aclass_engine_html_ac703279e3531bc1e668115affceb8c37"><div class="ttname"><a href="class_engine.html#ac703279e3531bc1e668115affceb8c37">Engine::Quit</a></div><div class="ttdeci">void Quit()</div><div class="ttdoc">Zatrzymuje petle gry i zamyka okno.</div><div class="ttdef"><b>Definicja</b> <a href="#l00149">Engine.cpp:149</a></div></div>
+<div class="ttc" id="aclass_engine_html_aeab6fad6f1d71d25c233fc6639bc4a2d"><div class="ttname"><a href="class_engine.html#aeab6fad6f1d71d25c233fc6639bc4a2d">Engine::Init</a></div><div class="ttdeci">void Init(const EngineConfig &amp;config)</div><div class="ttdoc">Inicjalizuje okno, renderer oraz podstawowe zasoby silnika.</div><div class="ttdef"><b>Definicja</b> <a href="#l00013">Engine.cpp:13</a></div></div>
+<div class="ttc" id="aclass_engine_html_af54381a5f9fe4525a3be12201c0d8712"><div class="ttname"><a href="class_engine.html#af54381a5f9fe4525a3be12201c0d8712">Engine::Run</a></div><div class="ttdeci">void Run(IGame *game)</div><div class="ttdoc">Uruchamia glowna petle gry.</div><div class="ttdef"><b>Definicja</b> <a href="#l00081">Engine.cpp:81</a></div></div>
+<div class="ttc" id="aclass_i_game_html"><div class="ttname"><a href="class_i_game.html">IGame</a></div><div class="ttdoc">Interfejs bazowy logiki gry uruchamianej przez silnik.</div><div class="ttdef"><b>Definicja</b> <a href="_i_game_8h_source.html#l00011">IGame.h:11</a></div></div>
+<div class="ttc" id="aclass_i_game_html_a01b8f9f47aa76e807e79495f0488daac"><div class="ttname"><a href="class_i_game.html#a01b8f9f47aa76e807e79495f0488daac">IGame::Start</a></div><div class="ttdeci">virtual void Start()=0</div><div class="ttdoc">Jednorazowa inicjalizacja zasobow gry.</div></div>
+<div class="ttc" id="aclass_i_game_html_a907b855228ff86008294e7b8e2938d0a"><div class="ttname"><a href="class_i_game.html#a907b855228ff86008294e7b8e2938d0a">IGame::Update</a></div><div class="ttdeci">virtual void Update()=0</div><div class="ttdoc">Aktualizacja logiki gry wykonywana w kazdej klatce.</div></div>
+<div class="ttc" id="aclass_input_html_af80dcfde6dbfe39bf3bc0345c75595ce"><div class="ttname"><a href="class_input.html#af80dcfde6dbfe39bf3bc0345c75595ce">Input::Update</a></div><div class="ttdeci">static void Update()</div><div class="ttdoc">Aktualizuje stany wejscia.</div><div class="ttdef"><b>Definicja</b> <a href="_input_8cpp_source.html#l00043">Input.cpp:43</a></div></div>
+<div class="ttc" id="aclass_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">Renderer programowy oparty o bufor pikseli RGBA.</div><div class="ttdef"><b>Definicja</b> <a href="_renderer_8h_source.html#l00016">Renderer.h:16</a></div></div>
+<div class="ttc" id="agroup__module__engine_html_gga5773202ab7ffd1746de9d527927198a3ab89c3d897b196ffff1537331bc659a97"><div class="ttname"><a href="group__module__engine.html#gga5773202ab7ffd1746de9d527927198a3ab89c3d897b196ffff1537331bc659a97">WindowMode::FULLSCREEN</a></div><div class="ttdeci">@ FULLSCREEN</div><div class="ttdoc">Pelny ekran w trybie ekskluzywnym monitora.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00018">Engine.h:18</a></div></div>
+<div class="ttc" id="agroup__module__engine_html_gga5773202ab7ffd1746de9d527927198a3af744a3ac16b1ac0bc9df0aa02cc1a038"><div class="ttname"><a href="group__module__engine.html#gga5773202ab7ffd1746de9d527927198a3af744a3ac16b1ac0bc9df0aa02cc1a038">WindowMode::BORDERLESS</a></div><div class="ttdeci">@ BORDERLESS</div><div class="ttdoc">Okno bez ramki, zwykle wykorzystywane jako pseudo-fullscreen.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00019">Engine.h:19</a></div></div>
+<div class="ttc" id="astruct_engine_config_html"><div class="ttname"><a href="struct_engine_config.html">EngineConfig</a></div><div class="ttdoc">Konfiguracja startowa silnika.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00026">Engine.h:26</a></div></div>
+<div class="ttc" id="astruct_engine_config_html_a1146ca6cb5f1a672a1e286567320b834"><div class="ttname"><a href="struct_engine_config.html#a1146ca6cb5f1a672a1e286567320b834">EngineConfig::framerateLimit</a></div><div class="ttdeci">int framerateLimit</div><div class="ttdoc">Docelowy limit FPS; 0 oznacza fallback do 60.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00031">Engine.h:31</a></div></div>
+<div class="ttc" id="astruct_engine_config_html_a368c018d7b370ced76815974a36d748e"><div class="ttname"><a href="struct_engine_config.html#a368c018d7b370ced76815974a36d748e">EngineConfig::windowMode</a></div><div class="ttdeci">WindowMode windowMode</div><div class="ttdoc">Tryb prezentacji okna.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00030">Engine.h:30</a></div></div>
+<div class="ttc" id="astruct_engine_config_html_a46f96d8751df40f9aa1777a896e79289"><div class="ttname"><a href="struct_engine_config.html#a46f96d8751df40f9aa1777a896e79289">EngineConfig::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">Wysokosc okna w pikselach.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00028">Engine.h:28</a></div></div>
+<div class="ttc" id="astruct_engine_config_html_ac09c34d8d703373460982fd075a26010"><div class="ttname"><a href="struct_engine_config.html#ac09c34d8d703373460982fd075a26010">EngineConfig::title</a></div><div class="ttdeci">std::string title</div><div class="ttdoc">Tytul wyswietlany na pasku okna.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00029">Engine.h:29</a></div></div>
+<div class="ttc" id="astruct_engine_config_html_ae32918d720e2dacc0341a19783bc25d2"><div class="ttname"><a href="struct_engine_config.html#ae32918d720e2dacc0341a19783bc25d2">EngineConfig::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">Szerokosc okna w pikselach.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00027">Engine.h:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="_engine_8cpp.html">Engine.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

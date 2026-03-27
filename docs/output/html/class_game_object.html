@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Dokumentacja klasy GameObject</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_game_object.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="class_game_object-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy GameObject<div class="ingroups"><a class="el" href="group__module__engine.html">Silnik</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bazowa jednostka sceny przechowujaca transformacje, komponenty i dzieci.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_game_object_8h_source.html">GameObject.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla GameObject</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_game_object.png" usemap="#GameObject_map" alt=""/>
+  <map id="GameObject_map" name="GameObject_map">
+<area href="class_box.html" title="Obiekt pudelka reprezentowany przez prostokat." alt="Box" shape="rect" coords="0,56,81,80"/>
+<area href="class_ship.html" title="Obiekt statku gracza reprezentowany jako trojkat." alt="Ship" shape="rect" coords="91,56,172,80"/>
+<area href="class_ufo.html" title="Obiekt UFO reprezentowany jako okrag z reakcja na klikniecie myszy." alt="Ufo" shape="rect" coords="182,56,263,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ae3dccb04f4e6052124213b5b7bd6bb37" id="r_ae3dccb04f4e6052124213b5b7bd6bb37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3dccb04f4e6052124213b5b7bd6bb37">GameObject</a> (const std::string &amp;<a class="el" href="#a66891b8bfd67373dde0155ae7808bbb4">tag</a>=&quot;Default&quot;, float x=0.0f, float y=0.0f)</td></tr>
+<tr class="memdesc:ae3dccb04f4e6052124213b5b7bd6bb37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy obiekt gry z podstawowa transformacja.  <br /></td></tr>
+<tr class="separator:ae3dccb04f4e6052124213b5b7bd6bb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ae2fa6e7916c799700cd659975d8ea" id="r_a67ae2fa6e7916c799700cd659975d8ea"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67ae2fa6e7916c799700cd659975d8ea">~GameObject</a> ()=default</td></tr>
+<tr class="memdesc:a67ae2fa6e7916c799700cd659975d8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wirtualny destruktor klasy bazowej.  <br /></td></tr>
+<tr class="separator:a67ae2fa6e7916c799700cd659975d8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd14aa169f501f94f1721943d716535" id="r_a1bd14aa169f501f94f1721943d716535"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bd14aa169f501f94f1721943d716535">Update</a> ()</td></tr>
+<tr class="memdesc:a1bd14aa169f501f94f1721943d716535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje komponenty i dzieci obiektu.  <br /></td></tr>
+<tr class="separator:a1bd14aa169f501f94f1721943d716535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb67736e80537dcad9d57bb01520260" id="r_a5bb67736e80537dcad9d57bb01520260"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bb67736e80537dcad9d57bb01520260">Render</a> (<a class="el" href="class_renderer.html">Renderer</a> &amp;renderer)</td></tr>
+<tr class="memdesc:a5bb67736e80537dcad9d57bb01520260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderuje komponenty i dzieci obiektu.  <br /></td></tr>
+<tr class="separator:a5bb67736e80537dcad9d57bb01520260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f470b30158802e37eaa197c3d065c77" id="r_a0f470b30158802e37eaa197c3d065c77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f470b30158802e37eaa197c3d065c77">AddChild</a> (std::unique_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt; child)</td></tr>
+<tr class="memdesc:a0f470b30158802e37eaa197c3d065c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje dziecko do aktualnego obiektu i ustawia parent.  <br /></td></tr>
+<tr class="separator:a0f470b30158802e37eaa197c3d065c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00fbdd00a95db80ff0fce40ccb6d2ca6" id="r_a00fbdd00a95db80ff0fce40ccb6d2ca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00fbdd00a95db80ff0fce40ccb6d2ca6">AddComponent</a> (std::unique_ptr&lt; <a class="el" href="class_base_component.html">BaseComponent</a> &gt; comp)</td></tr>
+<tr class="memdesc:a00fbdd00a95db80ff0fce40ccb6d2ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje komponent i uruchamia jego inicjalizacje.  <br /></td></tr>
+<tr class="separator:a00fbdd00a95db80ff0fce40ccb6d2ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba3b458e6bee6ea5aedd5c8cdeabf18" id="r_a5ba3b458e6bee6ea5aedd5c8cdeabf18"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a5ba3b458e6bee6ea5aedd5c8cdeabf18"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5ba3b458e6bee6ea5aedd5c8cdeabf18">GetComponent</a> ()</td></tr>
+<tr class="memdesc:a5ba3b458e6bee6ea5aedd5c8cdeabf18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca pierwszy komponent zadanego typu.  <br /></td></tr>
+<tr class="separator:a5ba3b458e6bee6ea5aedd5c8cdeabf18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d54ef722447d59905055b053e38ade7" id="r_a1d54ef722447d59905055b053e38ade7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point2_d.html">Point2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d54ef722447d59905055b053e38ade7">GetWorldPosition</a> () const</td></tr>
+<tr class="memdesc:a1d54ef722447d59905055b053e38ade7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyznacza pozycje obiektu w przestrzeni swiata.  <br /></td></tr>
+<tr class="separator:a1d54ef722447d59905055b053e38ade7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b32345cc2af2c7d06f8540d42a14c30" id="r_a9b32345cc2af2c7d06f8540d42a14c30"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b32345cc2af2c7d06f8540d42a14c30">GetWorldAngle</a> () const</td></tr>
+<tr class="memdesc:a9b32345cc2af2c7d06f8540d42a14c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyznacza kat obrotu obiektu w przestrzeni swiata.  <br /></td></tr>
+<tr class="separator:a9b32345cc2af2c7d06f8540d42a14c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a66891b8bfd67373dde0155ae7808bbb4" id="r_a66891b8bfd67373dde0155ae7808bbb4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66891b8bfd67373dde0155ae7808bbb4">tag</a></td></tr>
+<tr class="memdesc:a66891b8bfd67373dde0155ae7808bbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etykieta obiektu uzywana np.  <br /></td></tr>
+<tr class="separator:a66891b8bfd67373dde0155ae7808bbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7535ae769c1f801baf9469105ed7d38f" id="r_a7535ae769c1f801baf9469105ed7d38f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7535ae769c1f801baf9469105ed7d38f">isActive</a></td></tr>
+<tr class="memdesc:a7535ae769c1f801baf9469105ed7d38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga aktywnosci; gdy false, obiekt zostanie usuniety przy sprzataniu.  <br /></td></tr>
+<tr class="separator:a7535ae769c1f801baf9469105ed7d38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f779892b3225fec1cd06981e289109" id="r_ab1f779892b3225fec1cd06981e289109"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_point2_d.html">Point2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1f779892b3225fec1cd06981e289109">position</a></td></tr>
+<tr class="memdesc:ab1f779892b3225fec1cd06981e289109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lokalna pozycja obiektu wzgledem rodzica.  <br /></td></tr>
+<tr class="separator:ab1f779892b3225fec1cd06981e289109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae6b1449006f9bbca7c6456676659828" id="r_aae6b1449006f9bbca7c6456676659828"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae6b1449006f9bbca7c6456676659828">angle</a></td></tr>
+<tr class="memdesc:aae6b1449006f9bbca7c6456676659828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lokalny kat obrotu obiektu (w radianach).  <br /></td></tr>
+<tr class="separator:aae6b1449006f9bbca7c6456676659828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4113a496ed45ca90756cfa0d8dfe6171" id="r_a4113a496ed45ca90756cfa0d8dfe6171"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4113a496ed45ca90756cfa0d8dfe6171">parent</a></td></tr>
+<tr class="memdesc:a4113a496ed45ca90756cfa0d8dfe6171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaznik na rodzica w drzewie sceny; nullptr oznacza korzen.  <br /></td></tr>
+<tr class="separator:a4113a496ed45ca90756cfa0d8dfe6171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40a3e73fcf5af36917f15beff9320b7d" id="r_a40a3e73fcf5af36917f15beff9320b7d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40a3e73fcf5af36917f15beff9320b7d">children</a></td></tr>
+<tr class="memdesc:a40a3e73fcf5af36917f15beff9320b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dzieci obiektu w scenie, przechowywane z semantyka wlacznej wlasnosci.  <br /></td></tr>
+<tr class="separator:a40a3e73fcf5af36917f15beff9320b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa754740f111b82fb803d88a6d0192fb1" id="r_aa754740f111b82fb803d88a6d0192fb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_base_component.html">BaseComponent</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa754740f111b82fb803d88a6d0192fb1">components</a></td></tr>
+<tr class="memdesc:aa754740f111b82fb803d88a6d0192fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista komponentow rozszerzajacych zachowanie obiektu.  <br /></td></tr>
+<tr class="separator:aa754740f111b82fb803d88a6d0192fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Bazowa jednostka sceny przechowujaca transformacje, komponenty i dzieci. </p>
+<p>Klasa implementuje prosty scene graph:</p><ul>
+<li>pozycja/kat sa lokalne wzgledem rodzica,</li>
+<li>pozycja/kat w swiecie sa liczone rekurencyjnie. </li>
+</ul>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00017">17</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="ae3dccb04f4e6052124213b5b7bd6bb37" name="ae3dccb04f4e6052124213b5b7bd6bb37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3dccb04f4e6052124213b5b7bd6bb37">&#9670;&#160;</a></span>GameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::GameObject </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>tag</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Default&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0f</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tworzy obiekt gry z podstawowa transformacja. </p>
+<p>Tworzy obiekt gry i ustawia wartosci domyslne.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tag</td><td>Nazwa identyfikacyjna obiektu. </td></tr>
+    <tr><td class="paramname">x</td><td>Poczatkowa wspolrzedna X. </td></tr>
+    <tr><td class="paramname">y</td><td>Poczatkowa wspolrzedna Y. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8cpp_source.html#l00007">7</a> pliku <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00029">angle</a>, <a class="el" href="_game_object_8h_source.html#l00023">isActive</a>, <a class="el" href="_game_object_8h_source.html#l00032">parent</a>, <a class="el" href="_game_object_8h_source.html#l00026">position</a> i <a class="el" href="_game_object_8h_source.html#l00020">tag</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_box_8h_source.html#l00024">Box::Box()</a>, <a class="el" href="_ship_8h_source.html#l00024">Ship::Ship()</a> i <a class="el" href="_ufo_8h_source.html#l00023">Ufo::Ufo()</a>.</p>
+
+</div>
+</div>
+<a id="a67ae2fa6e7916c799700cd659975d8ea" name="a67ae2fa6e7916c799700cd659975d8ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ae2fa6e7916c799700cd659975d8ea">&#9670;&#160;</a></span>~GameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GameObject::~GameObject </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wirtualny destruktor klasy bazowej. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a0f470b30158802e37eaa197c3d065c77" name="a0f470b30158802e37eaa197c3d065c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f470b30158802e37eaa197c3d065c77">&#9670;&#160;</a></span>AddChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameObject::AddChild </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>child</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dodaje dziecko do aktualnego obiektu i ustawia parent. </p>
+<p>Dodaje dziecko i podpina relacje parent-child.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">child</td><td>Dziecko przekazywane przez unique_ptr. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8cpp_source.html#l00057">57</a> pliku <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00035">children</a>.</p>
+
+</div>
+</div>
+<a id="a00fbdd00a95db80ff0fce40ccb6d2ca6" name="a00fbdd00a95db80ff0fce40ccb6d2ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00fbdd00a95db80ff0fce40ccb6d2ca6">&#9670;&#160;</a></span>AddComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameObject::AddComponent </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_base_component.html">BaseComponent</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>comp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dodaje komponent i uruchamia jego inicjalizacje. </p>
+<p>Dodaje komponent do obiektu.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>Komponent przekazywany przez unique_ptr. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8cpp_source.html#l00065">65</a> pliku <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00038">components</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_box_8h_source.html#l00024">Box::Box()</a>, <a class="el" href="_ship_8h_source.html#l00024">Ship::Ship()</a> i <a class="el" href="_ufo_8h_source.html#l00023">Ufo::Ufo()</a>.</p>
+
+</div>
+</div>
+<a id="a5ba3b458e6bee6ea5aedd5c8cdeabf18" name="a5ba3b458e6bee6ea5aedd5c8cdeabf18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ba3b458e6bee6ea5aedd5c8cdeabf18">&#9670;&#160;</a></span>GetComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * GameObject::GetComponent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca pierwszy komponent zadanego typu. </p>
+<dl class="tparams"><dt>Parametry Szablonu</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Typ komponentu, np. <a class="el" href="class_shape_component.html" title="Komponent wizualny rysujacy figure geometryczna powiazana z GameObject.">ShapeComponent</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Wskaznik na komponent lub nullptr, gdy nie znaleziono. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00080">80</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00038">components</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_ufo_8h_source.html#l00042">Ufo::Update()</a>.</p>
+
+</div>
+</div>
+<a id="a9b32345cc2af2c7d06f8540d42a14c30" name="a9b32345cc2af2c7d06f8540d42a14c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b32345cc2af2c7d06f8540d42a14c30">&#9670;&#160;</a></span>GetWorldAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameObject::GetWorldAngle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyznacza kat obrotu obiektu w przestrzeni swiata. </p>
+<p>Zwraca kat obrotu obiektu w przestrzeni swiata.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Kat globalny liczony jako suma katow przodkow i lokalnego kata. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8cpp_source.html#l00088">88</a> pliku <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00029">angle</a> i <a class="el" href="_game_object_8h_source.html#l00032">parent</a>.</p>
+
+</div>
+</div>
+<a id="a1d54ef722447d59905055b053e38ade7" name="a1d54ef722447d59905055b053e38ade7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d54ef722447d59905055b053e38ade7">&#9670;&#160;</a></span>GetWorldPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_point2_d.html">Point2D</a> GameObject::GetWorldPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyznacza pozycje obiektu w przestrzeni swiata. </p>
+<p>Zwraca pozycje obiektu w przestrzeni swiata.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Pozycja globalna wyliczona rekurencyjnie po drzewie rodzicow. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8cpp_source.html#l00074">74</a> pliku <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00032">parent</a> i <a class="el" href="_game_object_8h_source.html#l00026">position</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_ufo_8h_source.html#l00042">Ufo::Update()</a>.</p>
+
+</div>
+</div>
+<a id="a5bb67736e80537dcad9d57bb01520260" name="a5bb67736e80537dcad9d57bb01520260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb67736e80537dcad9d57bb01520260">&#9670;&#160;</a></span>Render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameObject::Render </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_renderer.html">Renderer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>renderer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renderuje komponenty i dzieci obiektu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderer</td><td>Referencja do renderera. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8cpp_source.html#l00040">40</a> pliku <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00035">children</a> i <a class="el" href="_game_object_8h_source.html#l00038">components</a>.</p>
+
+</div>
+</div>
+<a id="a1bd14aa169f501f94f1721943d716535" name="a1bd14aa169f501f94f1721943d716535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd14aa169f501f94f1721943d716535">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameObject::Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje komponenty i dzieci obiektu. </p>
+<p>Aktualizuje komponenty i poddrzewo dzieci. </p>
+
+<p>Reimplementowana w <a class="el" href="class_box.html#a5e457ca8fa32e7947db297cf19c4ec54">Box</a>, <a class="el" href="class_ship.html#a8287aa0743dc9f2144d80ce641ba513a">Ship</a> i <a class="el" href="class_ufo.html#a31c1ac752b89851985875fc9f5481be9">Ufo</a>.</p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8cpp_source.html#l00014">14</a> pliku <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_game_object_8h_source.html#l00035">children</a> i <a class="el" href="_game_object_8h_source.html#l00038">components</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_box_8h_source.html#l00037">Box::Update()</a>, <a class="el" href="_ship_8h_source.html#l00037">Ship::Update()</a> i <a class="el" href="_ufo_8h_source.html#l00042">Ufo::Update()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="aae6b1449006f9bbca7c6456676659828" name="aae6b1449006f9bbca7c6456676659828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae6b1449006f9bbca7c6456676659828">&#9670;&#160;</a></span>angle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameObject::angle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lokalny kat obrotu obiektu (w radianach). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00029">29</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_game_object_8cpp_source.html#l00007">GameObject()</a>, <a class="el" href="_game_object_8cpp_source.html#l00088">GetWorldAngle()</a>, <a class="el" href="_box_8h_source.html#l00037">Box::Update()</a>, <a class="el" href="_ship_8h_source.html#l00037">Ship::Update()</a> i <a class="el" href="_ufo_8h_source.html#l00042">Ufo::Update()</a>.</p>
+
+</div>
+</div>
+<a id="a40a3e73fcf5af36917f15beff9320b7d" name="a40a3e73fcf5af36917f15beff9320b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a3e73fcf5af36917f15beff9320b7d">&#9670;&#160;</a></span>children</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="class_game_object.html">GameObject</a>&gt; &gt; GameObject::children</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dzieci obiektu w scenie, przechowywane z semantyka wlacznej wlasnosci. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00035">35</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_game_object_8cpp_source.html#l00057">AddChild()</a>, <a class="el" href="_game_object_8cpp_source.html#l00040">Render()</a> i <a class="el" href="_game_object_8cpp_source.html#l00014">Update()</a>.</p>
+
+</div>
+</div>
+<a id="aa754740f111b82fb803d88a6d0192fb1" name="aa754740f111b82fb803d88a6d0192fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa754740f111b82fb803d88a6d0192fb1">&#9670;&#160;</a></span>components</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="class_base_component.html">BaseComponent</a>&gt; &gt; GameObject::components</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista komponentow rozszerzajacych zachowanie obiektu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00038">38</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_game_object_8cpp_source.html#l00065">AddComponent()</a>, <a class="el" href="_game_object_8h_source.html#l00080">GetComponent()</a>, <a class="el" href="_game_object_8cpp_source.html#l00040">Render()</a> i <a class="el" href="_game_object_8cpp_source.html#l00014">Update()</a>.</p>
+
+</div>
+</div>
+<a id="a7535ae769c1f801baf9469105ed7d38f" name="a7535ae769c1f801baf9469105ed7d38f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7535ae769c1f801baf9469105ed7d38f">&#9670;&#160;</a></span>isActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameObject::isActive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flaga aktywnosci; gdy false, obiekt zostanie usuniety przy sprzataniu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00023">23</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_game_object_8cpp_source.html#l00007">GameObject()</a>.</p>
+
+</div>
+</div>
+<a id="a4113a496ed45ca90756cfa0d8dfe6171" name="a4113a496ed45ca90756cfa0d8dfe6171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4113a496ed45ca90756cfa0d8dfe6171">&#9670;&#160;</a></span>parent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_object.html">GameObject</a>* GameObject::parent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wskaznik na rodzica w drzewie sceny; nullptr oznacza korzen. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00032">32</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_game_object_8cpp_source.html#l00007">GameObject()</a>, <a class="el" href="_game_object_8cpp_source.html#l00088">GetWorldAngle()</a> i <a class="el" href="_game_object_8cpp_source.html#l00074">GetWorldPosition()</a>.</p>
+
+</div>
+</div>
+<a id="ab1f779892b3225fec1cd06981e289109" name="ab1f779892b3225fec1cd06981e289109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f779892b3225fec1cd06981e289109">&#9670;&#160;</a></span>position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_point2_d.html">Point2D</a> GameObject::position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lokalna pozycja obiektu wzgledem rodzica. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00026">26</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_game_object_8cpp_source.html#l00007">GameObject()</a> i <a class="el" href="_game_object_8cpp_source.html#l00074">GetWorldPosition()</a>.</p>
+
+</div>
+</div>
+<a id="a66891b8bfd67373dde0155ae7808bbb4" name="a66891b8bfd67373dde0155ae7808bbb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66891b8bfd67373dde0155ae7808bbb4">&#9670;&#160;</a></span>tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GameObject::tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Etykieta obiektu uzywana np. </p>
+<p>do filtrowania lub kolizji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_game_object_8h_source.html#l00020">20</a> pliku <a class="el" href="_game_object_8h_source.html">GameObject.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_box_8h_source.html#l00024">Box::Box()</a>, <a class="el" href="_game_object_8cpp_source.html#l00007">GameObject()</a>, <a class="el" href="_ship_8h_source.html#l00024">Ship::Ship()</a> i <a class="el" href="_ufo_8h_source.html#l00023">Ufo::Ufo()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_game_object_8h_source.html">GameObject.h</a></li>
+<li><a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_game_object.html">GameObject</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

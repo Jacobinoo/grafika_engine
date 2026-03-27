@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Plik źródłowy GameObject.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_game_object_8cpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GameObject.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_object_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_game_object_8h.html">GameObject.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_game_object.html#ae3dccb04f4e6052124213b5b7bd6bb37">    7</a></span><a class="code hl_function" href="class_game_object.html#ae3dccb04f4e6052124213b5b7bd6bb37">GameObject::GameObject</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="class_game_object.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a>, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    : <a class="code hl_variable" href="class_game_object.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a>(<a class="code hl_variable" href="class_game_object.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a>), <a class="code hl_variable" href="class_game_object.html#ab1f779892b3225fec1cd06981e289109">position</a>(x, y), <a class="code hl_variable" href="class_game_object.html#aae6b1449006f9bbca7c6456676659828">angle</a>(0.0f), <a class="code hl_variable" href="class_game_object.html#a7535ae769c1f801baf9469105ed7d38f">isActive</a>(true), <a class="code hl_variable" href="class_game_object.html#a4113a496ed45ca90756cfa0d8dfe6171">parent</a>(nullptr) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_game_object.html#a1bd14aa169f501f94f1721943d716535">   14</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_game_object.html#a1bd14aa169f501f94f1721943d716535">GameObject::Update</a>() {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// 1) Komponenty obiektu.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; comp : <a class="code hl_variable" href="class_game_object.html#aa754740f111b82fb803d88a6d0192fb1">components</a>) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        comp-&gt;Update();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// 2) Dzieci w drzewie sceny.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; child : <a class="code hl_variable" href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">children</a>) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span> (child-&gt;isActive) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            child-&gt;Update();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// 3) Sprzatanie nieaktywnych dzieci (remove-erase idiom).</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_variable" href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">children</a>.erase(</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        std::remove_if(<a class="code hl_variable" href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">children</a>.begin(), <a class="code hl_variable" href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">children</a>.end(),</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            [](<span class="keyword">const</span> std::unique_ptr&lt;GameObject&gt;&amp; child) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                return !child-&gt;isActive;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            }),</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_variable" href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">children</a>.end()</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    );</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_game_object.html#a5bb67736e80537dcad9d57bb01520260">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_game_object.html#a5bb67736e80537dcad9d57bb01520260">GameObject::Render</a>(<a class="code hl_class" href="class_renderer.html">Renderer</a>&amp; renderer) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// 1) Render komponentow obiektu.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; comp : <a class="code hl_variable" href="class_game_object.html#aa754740f111b82fb803d88a6d0192fb1">components</a>) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        comp-&gt;Draw(renderer);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// 2) Rekurencyjny render dzieci.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; child : <a class="code hl_variable" href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">children</a>) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">if</span> (child-&gt;isActive) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            child-&gt;Render(renderer);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_game_object.html#a0f470b30158802e37eaa197c3d065c77">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_game_object.html#a0f470b30158802e37eaa197c3d065c77">GameObject::AddChild</a>(std::unique_ptr&lt;GameObject&gt; child) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    child-&gt;parent = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_variable" href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">children</a>.push_back(std::move(child));</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_game_object.html#a00fbdd00a95db80ff0fce40ccb6d2ca6">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_game_object.html#a00fbdd00a95db80ff0fce40ccb6d2ca6">GameObject::AddComponent</a>(std::unique_ptr&lt;BaseComponent&gt; comp) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    comp-&gt;gameObject = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    comp-&gt;Init();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_variable" href="class_game_object.html#aa754740f111b82fb803d88a6d0192fb1">components</a>.push_back(std::move(comp));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_game_object.html#a1d54ef722447d59905055b053e38ade7">   74</a></span><a class="code hl_class" href="class_point2_d.html">Point2D</a> <a class="code hl_function" href="class_game_object.html#a1d54ef722447d59905055b053e38ade7">GameObject::GetWorldPosition</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_game_object.html#a4113a496ed45ca90756cfa0d8dfe6171">parent</a>) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">// Kluczowa transformacja hierarchiczna (scene graph):</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">// p_world = p_parent_world + R(parent_angle) * p_local</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="comment">// gdzie R(theta) to macierz rotacji 2D.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_game_object.html#a4113a496ed45ca90756cfa0d8dfe6171">parent</a>-&gt;GetWorldPosition() + <a class="code hl_variable" href="class_game_object.html#ab1f779892b3225fec1cd06981e289109">position</a>.Rotate(<a class="code hl_variable" href="class_game_object.html#a4113a496ed45ca90756cfa0d8dfe6171">parent</a>-&gt;GetWorldAngle());</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">// Korzen drzewa: pozycja lokalna jest rowna globalnej.</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_game_object.html#ab1f779892b3225fec1cd06981e289109">position</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_game_object.html#a9b32345cc2af2c7d06f8540d42a14c30">   88</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_game_object.html#a9b32345cc2af2c7d06f8540d42a14c30">GameObject::GetWorldAngle</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_game_object.html#a4113a496ed45ca90756cfa0d8dfe6171">parent</a>) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="comment">// Dla transformacji 2D kat globalny to suma katow na sciezce rodzicow.</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_game_object.html#a4113a496ed45ca90756cfa0d8dfe6171">parent</a>-&gt;GetWorldAngle() + <a class="code hl_variable" href="class_game_object.html#aae6b1449006f9bbca7c6456676659828">angle</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_game_object.html#aae6b1449006f9bbca7c6456676659828">angle</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="ttc" id="a_game_object_8h_html"><div class="ttname"><a href="_game_object_8h.html">GameObject.h</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a00fbdd00a95db80ff0fce40ccb6d2ca6"><div class="ttname"><a href="class_game_object.html#a00fbdd00a95db80ff0fce40ccb6d2ca6">GameObject::AddComponent</a></div><div class="ttdeci">void AddComponent(std::unique_ptr&lt; BaseComponent &gt; comp)</div><div class="ttdoc">Dodaje komponent i uruchamia jego inicjalizacje.</div><div class="ttdef"><b>Definicja</b> <a href="#l00065">GameObject.cpp:65</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a0f470b30158802e37eaa197c3d065c77"><div class="ttname"><a href="class_game_object.html#a0f470b30158802e37eaa197c3d065c77">GameObject::AddChild</a></div><div class="ttdeci">void AddChild(std::unique_ptr&lt; GameObject &gt; child)</div><div class="ttdoc">Dodaje dziecko do aktualnego obiektu i ustawia parent.</div><div class="ttdef"><b>Definicja</b> <a href="#l00057">GameObject.cpp:57</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a1bd14aa169f501f94f1721943d716535"><div class="ttname"><a href="class_game_object.html#a1bd14aa169f501f94f1721943d716535">GameObject::Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdoc">Aktualizuje komponenty i dzieci obiektu.</div><div class="ttdef"><b>Definicja</b> <a href="#l00014">GameObject.cpp:14</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a1d54ef722447d59905055b053e38ade7"><div class="ttname"><a href="class_game_object.html#a1d54ef722447d59905055b053e38ade7">GameObject::GetWorldPosition</a></div><div class="ttdeci">Point2D GetWorldPosition() const</div><div class="ttdoc">Wyznacza pozycje obiektu w przestrzeni swiata.</div><div class="ttdef"><b>Definicja</b> <a href="#l00074">GameObject.cpp:74</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a40a3e73fcf5af36917f15beff9320b7d"><div class="ttname"><a href="class_game_object.html#a40a3e73fcf5af36917f15beff9320b7d">GameObject::children</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; GameObject &gt; &gt; children</div><div class="ttdoc">Dzieci obiektu w scenie, przechowywane z semantyka wlacznej wlasnosci.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00035">GameObject.h:35</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a4113a496ed45ca90756cfa0d8dfe6171"><div class="ttname"><a href="class_game_object.html#a4113a496ed45ca90756cfa0d8dfe6171">GameObject::parent</a></div><div class="ttdeci">GameObject * parent</div><div class="ttdoc">Wskaznik na rodzica w drzewie sceny; nullptr oznacza korzen.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00032">GameObject.h:32</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a5bb67736e80537dcad9d57bb01520260"><div class="ttname"><a href="class_game_object.html#a5bb67736e80537dcad9d57bb01520260">GameObject::Render</a></div><div class="ttdeci">virtual void Render(Renderer &amp;renderer)</div><div class="ttdoc">Renderuje komponenty i dzieci obiektu.</div><div class="ttdef"><b>Definicja</b> <a href="#l00040">GameObject.cpp:40</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a66891b8bfd67373dde0155ae7808bbb4"><div class="ttname"><a href="class_game_object.html#a66891b8bfd67373dde0155ae7808bbb4">GameObject::tag</a></div><div class="ttdeci">std::string tag</div><div class="ttdoc">Etykieta obiektu uzywana np.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00020">GameObject.h:20</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a7535ae769c1f801baf9469105ed7d38f"><div class="ttname"><a href="class_game_object.html#a7535ae769c1f801baf9469105ed7d38f">GameObject::isActive</a></div><div class="ttdeci">bool isActive</div><div class="ttdoc">Flaga aktywnosci; gdy false, obiekt zostanie usuniety przy sprzataniu.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00023">GameObject.h:23</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a9b32345cc2af2c7d06f8540d42a14c30"><div class="ttname"><a href="class_game_object.html#a9b32345cc2af2c7d06f8540d42a14c30">GameObject::GetWorldAngle</a></div><div class="ttdeci">float GetWorldAngle() const</div><div class="ttdoc">Wyznacza kat obrotu obiektu w przestrzeni swiata.</div><div class="ttdef"><b>Definicja</b> <a href="#l00088">GameObject.cpp:88</a></div></div>
+<div class="ttc" id="aclass_game_object_html_aa754740f111b82fb803d88a6d0192fb1"><div class="ttname"><a href="class_game_object.html#aa754740f111b82fb803d88a6d0192fb1">GameObject::components</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; BaseComponent &gt; &gt; components</div><div class="ttdoc">Lista komponentow rozszerzajacych zachowanie obiektu.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00038">GameObject.h:38</a></div></div>
+<div class="ttc" id="aclass_game_object_html_aae6b1449006f9bbca7c6456676659828"><div class="ttname"><a href="class_game_object.html#aae6b1449006f9bbca7c6456676659828">GameObject::angle</a></div><div class="ttdeci">float angle</div><div class="ttdoc">Lokalny kat obrotu obiektu (w radianach).</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00029">GameObject.h:29</a></div></div>
+<div class="ttc" id="aclass_game_object_html_ab1f779892b3225fec1cd06981e289109"><div class="ttname"><a href="class_game_object.html#ab1f779892b3225fec1cd06981e289109">GameObject::position</a></div><div class="ttdeci">Point2D position</div><div class="ttdoc">Lokalna pozycja obiektu wzgledem rodzica.</div><div class="ttdef"><b>Definicja</b> <a href="_game_object_8h_source.html#l00026">GameObject.h:26</a></div></div>
+<div class="ttc" id="aclass_game_object_html_ae3dccb04f4e6052124213b5b7bd6bb37"><div class="ttname"><a href="class_game_object.html#ae3dccb04f4e6052124213b5b7bd6bb37">GameObject::GameObject</a></div><div class="ttdeci">GameObject(const std::string &amp;tag=&quot;Default&quot;, float x=0.0f, float y=0.0f)</div><div class="ttdoc">Tworzy obiekt gry z podstawowa transformacja.</div><div class="ttdef"><b>Definicja</b> <a href="#l00007">GameObject.cpp:7</a></div></div>
+<div class="ttc" id="aclass_point2_d_html"><div class="ttname"><a href="class_point2_d.html">Point2D</a></div><div class="ttdoc">Prosta struktura wektora/punktu 2D z podstawowymi operacjami.</div><div class="ttdef"><b>Definicja</b> <a href="_point2_d_8h_source.html#l00007">Point2D.h:7</a></div></div>
+<div class="ttc" id="aclass_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">Renderer programowy oparty o bufor pikseli RGBA.</div><div class="ttdef"><b>Definicja</b> <a href="_renderer_8h_source.html#l00016">Renderer.h:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="_game_object_8cpp.html">GameObject.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

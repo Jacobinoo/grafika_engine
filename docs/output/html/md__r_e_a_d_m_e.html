@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: CMake SFML Project Template</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">CMake SFML Project Template</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p>This repository template should allow for a fast and hassle-free kick start of your next SFML project using CMake. Thanks to <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">GitHub's nature of templates</a>, you can fork this repository without inheriting its Git history.</p>
+<p>The template starts out very basic, but might receive additional features over time:</p>
+<ul>
+<li>Basic CMake script to build your project and link SFML on any operating system</li>
+<li>Basic <a href="https://github.com/features/actions">GitHub Actions</a> script for all major platforms</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Quick start</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Command line</h2>
+<ol type="1">
+<li>Install <a href="https://git-scm.com/downloads">Git</a> and <a href="https://cmake.org/download/">CMake</a>. Use your system's package manager if available.</li>
+<li>Follow <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">GitHub's instructions</a> for how to use their project template feature to create your own project. If you don't want to use GitHub, see the section below.</li>
+<li>Clone your new GitHub repo and open the repo in your text editor of choice.</li>
+<li>Open <a href="CMakeLists.txt">CMakeLists.txt</a>. Rename the project and the target name of the executable to whatever name you want. Make sure to change all occurrences.</li>
+<li>If you want to add or remove any .cpp files, change the source files listed in the <code>add_executable</code> call in CMakeLists.txt to match the source files your project requires. If you plan on keeping the default <a class="el" href="main_8cpp.html">main.cpp</a> file then no changes are required.</li>
+<li>If your code uses the Audio or Network modules then add <code>SFML::Audio</code> or <code>SFML::Network</code> to the <code>target_link_libraries</code> call alongside the existing <code>SFML::Graphics</code> library that is being linked.</li>
+<li>If you use Linux, install SFML's dependencies using your system package manager. On Ubuntu and other Debian-based distributions you can use the following commands: <div class="fragment"><div class="line">sudo apt update</div>
+<div class="line">sudo apt install \</div>
+<div class="line">    libxrandr-dev \</div>
+<div class="line">    libxcursor-dev \</div>
+<div class="line">    libxi-dev \</div>
+<div class="line">    libudev-dev \</div>
+<div class="line">    libfreetype-dev \</div>
+<div class="line">    libflac-dev \</div>
+<div class="line">    libvorbis-dev \</div>
+<div class="line">    libgl1-mesa-dev \</div>
+<div class="line">    libegl1-mesa-dev \</div>
+<div class="line">    libfreetype-dev</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Configure and build your project. Most popular IDEs support CMake projects with very little effort on your part.</p><ul>
+<li><a href="https://code.visualstudio.com">VS Code</a> via the <a href="https://code.visualstudio.com/docs/cpp/cmake-linux">CMake extension</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170">Visual Studio</a></li>
+<li><a href="https://www.jetbrains.com/clion/features/cmake-support.html">CLion</a></li>
+<li><a href="https://doc.qt.io/qtcreator/creator-project-cmake.html">Qt Creator</a></li>
+</ul>
+<p class="startli">Using CMake from the command line is straightforward as well. Be sure to run these commands in the root directory of the project you just created.</p>
+<div class="fragment"><div class="line">cmake -B build</div>
+<div class="line">cmake --build build</div>
+</div><!-- fragment --></li>
+<li>Enjoy!</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Visual Studio</h2>
+<p>Using a Visual Studio workspace is the simplest way to get started on windows.</p>
+<ol type="1">
+<li>Ensure you have the <a href="https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio#installation">required components installed</a>.</li>
+<li>Follow <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">GitHub's instructions</a> for how to use their project template feature to create your own project.</li>
+<li>If you have already cloned this repo, you can <a href="https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio0#ide-integration">open the folder</a>.</li>
+<li>If not, you can <a href="https://learn.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo">clone it directly in Visual Studio</a>.</li>
+</ol>
+<p>Visual Studio should automatically configure the CMake project, then you can build and run as normal through Visual Studio. See the links above for more details.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Upgrading SFML</h1>
+<p>SFML is found via CMake's <a href="https://cmake.org/cmake/help/latest/module/FetchContent.html">FetchContent</a> module. FetchContent automatically downloads SFML from GitHub and builds it alongside your own code. Beyond the convenience of not having to install SFML yourself, this ensures ABI compatibility and simplifies things like specifying static versus shared libraries.</p>
+<p>Modifying what version of SFML you want is as easy as changing the <code>GIT_TAG</code> argument. Currently it uses SFML 3 via the <code>3.0.2</code> tag.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+But I want to...</h1>
+<p>Modify CMake options by adding them as configuration parameters (with a <code>-D</code> flag) or by modifying the contents of CMakeCache.txt and rebuilding.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Not use GitHub</h2>
+<p>You can use this project without a GitHub account by <a href="https://github.com/SFML/cmake-sfml-project/archive/refs/heads/master.zip">downloading the contents</a> of the repository as a ZIP archive and unpacking it locally. This approach also avoids using Git entirely if you would prefer to not do that.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Change Compilers</h2>
+<p>See the variety of <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER.html"><code>CMAKE_&lt;LANG&gt;_COMPILER</code></a> options. In particular you'll want to modify <code>CMAKE_CXX_COMPILER</code> to point to the C++ compiler you wish to use.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Change Compiler Optimizations</h2>
+<p>CMake abstracts away specific optimizer flags through the <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html"><code>CMAKE_BUILD_TYPE</code></a> option. By default this project recommends <code>Release</code> builds which enable optimizations. Other build types include <code>Debug</code> builds which enable debug symbols but disable optimizations. If you're using a multi-configuration generator (as is often the case on Windows), you can modify the <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_CONFIGURATION_TYPES.html#variable:CMAKE_CONFIGURATION_TYPES"><code>CMAKE_CONFIGURATION_TYPES</code></a> option.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Change Generators</h2>
+<p>While CMake will attempt to pick a suitable default generator, some systems offer a number of generators to choose from. Ubuntu, for example, offers Makefiles and Ninja as two potential options. For a list of generators, click <a href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html">here</a>. To modify the generator you're using you must reconfigure your project providing a <code>-G</code> flag with a value corresponding to the generator you want. You can't simply modify an entry in the CMakeCache.txt file unlike the above options. Then you may rebuild your project with this new generator.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
+More Reading</h1>
+<p>Here are some useful resources if you want to learn more about CMake:</p>
+<ul>
+<li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/">Official CMake Tutorial</a></li>
+<li><a href="https://alexreinking.com/blog/how-to-use-cmake-without-the-agonizing-pain-part-1.html">How to Use CMake Without the Agonizing Pain - Part 1</a></li>
+<li><a href="https://alexreinking.com/blog/how-to-use-cmake-without-the-agonizing-pain-part-2.html">How to Use CMake Without the Agonizing Pain - Part 2</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PL8i3OhJb4FNV10aIZ8oF0AA46HgA2ed8g">Better CMake YouTube series by Jefferon Amstutz</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Doxygen Documentation</h1>
+<p>This repository contains a ready-to-use Doxygen configuration file and module split.</p>
+<ol type="1">
+<li>Generate docs from the project root: <div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --></li>
+<li>Open generated HTML documentation: <div class="fragment"><div class="line">docs/output/html/index.html</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md12"></a>
+License</h1>
+<p>The source code is dual licensed under Public Domain and MIT &ndash; choose whichever you prefer. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

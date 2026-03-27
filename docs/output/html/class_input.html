@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Dokumentacja klasy Input</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_input.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Statyczne metody publiczne</a> &#124;
+<a href="#pri-static-attribs">Statyczne atrybuty prywatne</a> &#124;
+<a href="class_input-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy Input<div class="ingroups"><a class="el" href="group__module__input.html">Wejscie</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Statyczny modul obslugi wejscia (klawiatura + mysz).  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_input_8h_source.html">Input.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Statyczne metody publiczne</h2></td></tr>
+<tr class="memitem:af09e40f2ffe7c831d5f09ba742c9561d" id="r_af09e40f2ffe7c831d5f09ba742c9561d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af09e40f2ffe7c831d5f09ba742c9561d">BindAction</a> (const std::string &amp;actionName, <a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a> key)</td></tr>
+<tr class="memdesc:af09e40f2ffe7c831d5f09ba742c9561d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejestruje akcje klawiaturowa.  <br /></td></tr>
+<tr class="separator:af09e40f2ffe7c831d5f09ba742c9561d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5692e200a00abe8a6ff4eaad09e06eb" id="r_af5692e200a00abe8a6ff4eaad09e06eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5692e200a00abe8a6ff4eaad09e06eb">BindMouseAction</a> (const std::string &amp;actionName, <a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a> button)</td></tr>
+<tr class="memdesc:af5692e200a00abe8a6ff4eaad09e06eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejestruje akcje myszy.  <br /></td></tr>
+<tr class="separator:af5692e200a00abe8a6ff4eaad09e06eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80dcfde6dbfe39bf3bc0345c75595ce" id="r_af80dcfde6dbfe39bf3bc0345c75595ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af80dcfde6dbfe39bf3bc0345c75595ce">Update</a> ()</td></tr>
+<tr class="memdesc:af80dcfde6dbfe39bf3bc0345c75595ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje stany wejscia.  <br /></td></tr>
+<tr class="separator:af80dcfde6dbfe39bf3bc0345c75595ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314366be2b3260480d1acaf832971e4d" id="r_a314366be2b3260480d1acaf832971e4d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a314366be2b3260480d1acaf832971e4d">IsActionHeld</a> (const std::string &amp;actionName)</td></tr>
+<tr class="memdesc:a314366be2b3260480d1acaf832971e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy akcja jest aktualnie przytrzymywana.  <br /></td></tr>
+<tr class="separator:a314366be2b3260480d1acaf832971e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13eff30fa3f98aaadb29ba76460a863d" id="r_a13eff30fa3f98aaadb29ba76460a863d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13eff30fa3f98aaadb29ba76460a863d">IsActionJustPressed</a> (const std::string &amp;actionName)</td></tr>
+<tr class="memdesc:a13eff30fa3f98aaadb29ba76460a863d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza zbocze narastajace (fresh press) akcji.  <br /></td></tr>
+<tr class="separator:a13eff30fa3f98aaadb29ba76460a863d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a792b7cc6874bae9f25aab0e8b8d03ccf" id="r_a792b7cc6874bae9f25aab0e8b8d03ccf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_point2_d.html">Point2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a792b7cc6874bae9f25aab0e8b8d03ccf">GetMousePosition</a> (const sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a792b7cc6874bae9f25aab0e8b8d03ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca pozycje kursora myszy wzgledem danego okna.  <br /></td></tr>
+<tr class="separator:a792b7cc6874bae9f25aab0e8b8d03ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Statyczne atrybuty prywatne</h2></td></tr>
+<tr class="memitem:add68d1abdd8334f32b32715e00958a3f" id="r_add68d1abdd8334f32b32715e00958a3f"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; std::string, <a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add68d1abdd8334f32b32715e00958a3f">actionBindings</a></td></tr>
+<tr class="memdesc:add68d1abdd8334f32b32715e00958a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Powiazanie nazwy akcji z klawiszem.  <br /></td></tr>
+<tr class="separator:add68d1abdd8334f32b32715e00958a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992a2e69c450e6b005d3291b38c18e40" id="r_a992a2e69c450e6b005d3291b38c18e40"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; std::string, <a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a992a2e69c450e6b005d3291b38c18e40">mouseActionBindings</a></td></tr>
+<tr class="memdesc:a992a2e69c450e6b005d3291b38c18e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Powiazanie nazwy akcji z przyciskiem myszy.  <br /></td></tr>
+<tr class="separator:a992a2e69c450e6b005d3291b38c18e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6034731f8ca55027235fa93e12c771c" id="r_ae6034731f8ca55027235fa93e12c771c"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6034731f8ca55027235fa93e12c771c">currentKeyStates</a></td></tr>
+<tr class="memdesc:ae6034731f8ca55027235fa93e12c771c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny stan klawiszy.  <br /></td></tr>
+<tr class="separator:ae6034731f8ca55027235fa93e12c771c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4389b3797b428c1d34304d4d8e678e60" id="r_a4389b3797b428c1d34304d4d8e678e60"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4389b3797b428c1d34304d4d8e678e60">previousKeyStates</a></td></tr>
+<tr class="memdesc:a4389b3797b428c1d34304d4d8e678e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stan klawiszy z poprzedniej klatki.  <br /></td></tr>
+<tr class="separator:a4389b3797b428c1d34304d4d8e678e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e816918d5c4932151f4a3f43cbfeca8" id="r_a4e816918d5c4932151f4a3f43cbfeca8"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e816918d5c4932151f4a3f43cbfeca8">currentMouseStates</a></td></tr>
+<tr class="memdesc:a4e816918d5c4932151f4a3f43cbfeca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny stan przyciskow myszy.  <br /></td></tr>
+<tr class="separator:a4e816918d5c4932151f4a3f43cbfeca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32b4c1235f1c4805eece9f08ae02e0b" id="r_ad32b4c1235f1c4805eece9f08ae02e0b"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad32b4c1235f1c4805eece9f08ae02e0b">previousMouseStates</a></td></tr>
+<tr class="memdesc:ad32b4c1235f1c4805eece9f08ae02e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stan przyciskow myszy z poprzedniej klatki.  <br /></td></tr>
+<tr class="separator:ad32b4c1235f1c4805eece9f08ae02e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Statyczny modul obslugi wejscia (klawiatura + mysz). </p>
+<p>Modul bazuje na mapowaniu nazw akcji na fizyczne klawisze/przyciski. Dzieki temu kod gry operuje na akcjach logicznych (np. "Jump"). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8h_source.html#l00021">21</a> pliku <a class="el" href="_input_8h_source.html">Input.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="af09e40f2ffe7c831d5f09ba742c9561d" name="af09e40f2ffe7c831d5f09ba742c9561d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af09e40f2ffe7c831d5f09ba742c9561d">&#9670;&#160;</a></span>BindAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Input::BindAction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rejestruje akcje klawiaturowa. </p>
+<p>Przypisuje nazwe akcji do klawisza.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nazwa akcji logicznej. </td></tr>
+    <tr><td class="paramname">key</td><td>Przypisany klawisz. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8cpp_source.html#l00024">24</a> pliku <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_input_8h_source.html#l00023">actionBindings</a>, <a class="el" href="_input_8h_source.html#l00026">currentKeyStates</a> i <a class="el" href="_input_8h_source.html#l00027">previousKeyStates</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_my_game_8h_source.html#l00021">MyGame::Start()</a>.</p>
+
+</div>
+</div>
+<a id="af5692e200a00abe8a6ff4eaad09e06eb" name="af5692e200a00abe8a6ff4eaad09e06eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5692e200a00abe8a6ff4eaad09e06eb">&#9670;&#160;</a></span>BindMouseAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Input::BindMouseAction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a></td>          <td class="paramname"><span class="paramname"><em>button</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rejestruje akcje myszy. </p>
+<p>Przypisuje nazwe akcji do przycisku myszy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nazwa akcji logicznej. </td></tr>
+    <tr><td class="paramname">button</td><td>Przypisany przycisk myszy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8cpp_source.html#l00034">34</a> pliku <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_input_8h_source.html#l00029">currentMouseStates</a>, <a class="el" href="_input_8h_source.html#l00024">mouseActionBindings</a> i <a class="el" href="_input_8h_source.html#l00030">previousMouseStates</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_my_game_8h_source.html#l00021">MyGame::Start()</a>.</p>
+
+</div>
+</div>
+<a id="a792b7cc6874bae9f25aab0e8b8d03ccf" name="a792b7cc6874bae9f25aab0e8b8d03ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a792b7cc6874bae9f25aab0e8b8d03ccf">&#9670;&#160;</a></span>GetMousePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_point2_d.html">Point2D</a> Input::GetMousePosition </td>
+          <td>(</td>
+          <td class="paramtype">const sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca pozycje kursora myszy wzgledem danego okna. </p>
+<p>Pobiera pozycje kursora myszy wzgledem wskazanego okna.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Okno referencyjne. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Pozycja kursora jako <a class="el" href="class_point2_d.html">Point2D</a>. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8cpp_source.html#l00099">99</a> pliku <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_ufo_8h_source.html#l00042">Ufo::Update()</a>.</p>
+
+</div>
+</div>
+<a id="a314366be2b3260480d1acaf832971e4d" name="a314366be2b3260480d1acaf832971e4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314366be2b3260480d1acaf832971e4d">&#9670;&#160;</a></span>IsActionHeld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::IsActionHeld </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy akcja jest aktualnie przytrzymywana. </p>
+<p>Sprawdza czy akcja jest przytrzymywana.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nazwa akcji. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>true gdy przycisk akcji jest wcisniety. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8cpp_source.html#l00082">82</a> pliku <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_input_8h_source.html#l00023">actionBindings</a>, <a class="el" href="_input_8h_source.html#l00026">currentKeyStates</a>, <a class="el" href="_input_8h_source.html#l00029">currentMouseStates</a> i <a class="el" href="_input_8h_source.html#l00024">mouseActionBindings</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_box_8h_source.html#l00037">Box::Update()</a>, <a class="el" href="_ship_8h_source.html#l00037">Ship::Update()</a> i <a class="el" href="_ufo_8h_source.html#l00042">Ufo::Update()</a>.</p>
+
+</div>
+</div>
+<a id="a13eff30fa3f98aaadb29ba76460a863d" name="a13eff30fa3f98aaadb29ba76460a863d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13eff30fa3f98aaadb29ba76460a863d">&#9670;&#160;</a></span>IsActionJustPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::IsActionJustPressed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprawdza zbocze narastajace (fresh press) akcji. </p>
+<p>Sprawdza czy akcja zostala nacisnieta w tej klatce.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nazwa akcji. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>true tylko w klatce przejscia false -&gt; true. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8cpp_source.html#l00063">63</a> pliku <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_input_8h_source.html#l00023">actionBindings</a>, <a class="el" href="_input_8h_source.html#l00026">currentKeyStates</a>, <a class="el" href="_input_8h_source.html#l00029">currentMouseStates</a>, <a class="el" href="_input_8h_source.html#l00024">mouseActionBindings</a>, <a class="el" href="_input_8h_source.html#l00027">previousKeyStates</a> i <a class="el" href="_input_8h_source.html#l00030">previousMouseStates</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_my_game_8h_source.html#l00060">MyGame::Update()</a> i <a class="el" href="_ufo_8h_source.html#l00042">Ufo::Update()</a>.</p>
+
+</div>
+</div>
+<a id="af80dcfde6dbfe39bf3bc0345c75595ce" name="af80dcfde6dbfe39bf3bc0345c75595ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80dcfde6dbfe39bf3bc0345c75595ce">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Input::Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje stany wejscia. </p>
+<p>Aktualizuje snapshot stanu wejscia dla biezacej klatki.</p>
+<p>Powinna byc wywolywana raz na klatke przed logika gry. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8cpp_source.html#l00043">43</a> pliku <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_input_8h_source.html#l00026">currentKeyStates</a>, <a class="el" href="_input_8h_source.html#l00029">currentMouseStates</a>, <a class="el" href="_input_8h_source.html#l00027">previousKeyStates</a> i <a class="el" href="_input_8h_source.html#l00030">previousMouseStates</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00081">Engine::Run()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="add68d1abdd8334f32b32715e00958a3f" name="add68d1abdd8334f32b32715e00958a3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add68d1abdd8334f32b32715e00958a3f">&#9670;&#160;</a></span>actionBindings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; std::string, <a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a> &gt; Input::actionBindings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Powiazanie nazwy akcji z klawiszem. </p>
+<p>Mapa nazw akcji klawiatury do klawiszy SFML. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8h_source.html#l00023">23</a> pliku <a class="el" href="_input_8h_source.html">Input.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_input_8cpp_source.html#l00024">BindAction()</a>, <a class="el" href="_input_8cpp_source.html#l00082">IsActionHeld()</a> i <a class="el" href="_input_8cpp_source.html#l00063">IsActionJustPressed()</a>.</p>
+
+</div>
+</div>
+<a id="ae6034731f8ca55027235fa93e12c771c" name="ae6034731f8ca55027235fa93e12c771c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6034731f8ca55027235fa93e12c771c">&#9670;&#160;</a></span>currentKeyStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a>, bool &gt; Input::currentKeyStates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualny stan klawiszy. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8h_source.html#l00026">26</a> pliku <a class="el" href="_input_8h_source.html">Input.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_input_8cpp_source.html#l00024">BindAction()</a>, <a class="el" href="_input_8cpp_source.html#l00082">IsActionHeld()</a>, <a class="el" href="_input_8cpp_source.html#l00063">IsActionJustPressed()</a> i <a class="el" href="_input_8cpp_source.html#l00043">Update()</a>.</p>
+
+</div>
+</div>
+<a id="a4e816918d5c4932151f4a3f43cbfeca8" name="a4e816918d5c4932151f4a3f43cbfeca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e816918d5c4932151f4a3f43cbfeca8">&#9670;&#160;</a></span>currentMouseStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a>, bool &gt; Input::currentMouseStates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualny stan przyciskow myszy. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8h_source.html#l00029">29</a> pliku <a class="el" href="_input_8h_source.html">Input.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_input_8cpp_source.html#l00034">BindMouseAction()</a>, <a class="el" href="_input_8cpp_source.html#l00082">IsActionHeld()</a>, <a class="el" href="_input_8cpp_source.html#l00063">IsActionJustPressed()</a> i <a class="el" href="_input_8cpp_source.html#l00043">Update()</a>.</p>
+
+</div>
+</div>
+<a id="a992a2e69c450e6b005d3291b38c18e40" name="a992a2e69c450e6b005d3291b38c18e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a992a2e69c450e6b005d3291b38c18e40">&#9670;&#160;</a></span>mouseActionBindings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; std::string, <a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a> &gt; Input::mouseActionBindings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Powiazanie nazwy akcji z przyciskiem myszy. </p>
+<p>Mapa nazw akcji myszy do przyciskow SFML. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8h_source.html#l00024">24</a> pliku <a class="el" href="_input_8h_source.html">Input.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_input_8cpp_source.html#l00034">BindMouseAction()</a>, <a class="el" href="_input_8cpp_source.html#l00082">IsActionHeld()</a> i <a class="el" href="_input_8cpp_source.html#l00063">IsActionJustPressed()</a>.</p>
+
+</div>
+</div>
+<a id="a4389b3797b428c1d34304d4d8e678e60" name="a4389b3797b428c1d34304d4d8e678e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4389b3797b428c1d34304d4d8e678e60">&#9670;&#160;</a></span>previousKeyStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="_input_8h.html#a32128bd65ea4d66330fee2b44bdef3da">KeyCode</a>, bool &gt; Input::previousKeyStates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stan klawiszy z poprzedniej klatki. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8h_source.html#l00027">27</a> pliku <a class="el" href="_input_8h_source.html">Input.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_input_8cpp_source.html#l00024">BindAction()</a>, <a class="el" href="_input_8cpp_source.html#l00063">IsActionJustPressed()</a> i <a class="el" href="_input_8cpp_source.html#l00043">Update()</a>.</p>
+
+</div>
+</div>
+<a id="ad32b4c1235f1c4805eece9f08ae02e0b" name="ad32b4c1235f1c4805eece9f08ae02e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad32b4c1235f1c4805eece9f08ae02e0b">&#9670;&#160;</a></span>previousMouseStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="_input_8h.html#aafaef8893609eb6f50561b7fd23e287c">MouseCode</a>, bool &gt; Input::previousMouseStates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stan przyciskow myszy z poprzedniej klatki. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_input_8h_source.html#l00030">30</a> pliku <a class="el" href="_input_8h_source.html">Input.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_input_8cpp_source.html#l00034">BindMouseAction()</a>, <a class="el" href="_input_8cpp_source.html#l00063">IsActionJustPressed()</a> i <a class="el" href="_input_8cpp_source.html#l00043">Update()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_input_8h_source.html">Input.h</a></li>
+<li><a class="el" href="_input_8cpp_source.html">Input.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_input.html">Input</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

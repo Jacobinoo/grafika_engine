@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Dokumentacja klasy ShapeComponent</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_shape_component.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="class_shape_component-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy ShapeComponent<div class="ingroups"><a class="el" href="group__module__components.html">Komponenty</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Komponent wizualny rysujacy figure geometryczna powiazana z <a class="el" href="class_game_object.html" title="Bazowa jednostka sceny przechowujaca transformacje, komponenty i dzieci.">GameObject</a>.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla ShapeComponent</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_shape_component.png" usemap="#ShapeComponent_map" alt=""/>
+  <map id="ShapeComponent_map" name="ShapeComponent_map">
+<area href="class_base_component.html" title="Bazowa klasa komponentu w architekturze ECS-like (kompozycja obiektu)." alt="BaseComponent" shape="rect" coords="0,0,111,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:adc4486ec24191d8c196fc81ebac6693b" id="r_adc4486ec24191d8c196fc81ebac6693b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc4486ec24191d8c196fc81ebac6693b">ShapeComponent</a> (<a class="el" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a> s, sf::Color c, bool filled=false)</td></tr>
+<tr class="memdesc:adc4486ec24191d8c196fc81ebac6693b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy komponent ksztaltu.  <br /></td></tr>
+<tr class="separator:adc4486ec24191d8c196fc81ebac6693b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb544e1bf9640e6b9206f558af44840c" id="r_adb544e1bf9640e6b9206f558af44840c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb544e1bf9640e6b9206f558af44840c">SetColor</a> (sf::Color newColor)</td></tr>
+<tr class="memdesc:adb544e1bf9640e6b9206f558af44840c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia nowy kolor figury.  <br /></td></tr>
+<tr class="separator:adb544e1bf9640e6b9206f558af44840c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefae19dac1803241faef24bb5c3997a5" id="r_aefae19dac1803241faef24bb5c3997a5"><td class="memItemLeft" align="right" valign="top">sf::Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefae19dac1803241faef24bb5c3997a5">GetColor</a> () const</td></tr>
+<tr class="memdesc:aefae19dac1803241faef24bb5c3997a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca aktualny kolor figury.  <br /></td></tr>
+<tr class="separator:aefae19dac1803241faef24bb5c3997a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197d01a3cf13cdac60af345bc5c4134f" id="r_a197d01a3cf13cdac60af345bc5c4134f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a197d01a3cf13cdac60af345bc5c4134f">SetShape</a> (<a class="el" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a> newShape)</td></tr>
+<tr class="memdesc:a197d01a3cf13cdac60af345bc5c4134f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Podmienia przechowywana figure.  <br /></td></tr>
+<tr class="separator:a197d01a3cf13cdac60af345bc5c4134f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a769e760610d056453adfaeafa37868" id="r_a0a769e760610d056453adfaeafa37868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a769e760610d056453adfaeafa37868">Draw</a> (<a class="el" href="class_renderer.html">Renderer</a> &amp;renderer) override</td></tr>
+<tr class="memdesc:a0a769e760610d056453adfaeafa37868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje figure po transformacji do przestrzeni swiata.  <br /></td></tr>
+<tr class="separator:a0a769e760610d056453adfaeafa37868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_base_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_base_component')"><img src="closed.png" alt="-"/>&#160;Metody publiczne dziedziczone z <a class="el" href="class_base_component.html">BaseComponent</a></td></tr>
+<tr class="memitem:a7c6da6bd566a84c78dbaebd3d698e00b inherit pub_methods_class_base_component" id="r_a7c6da6bd566a84c78dbaebd3d698e00b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_component.html#a7c6da6bd566a84c78dbaebd3d698e00b">~BaseComponent</a> ()=default</td></tr>
+<tr class="memdesc:a7c6da6bd566a84c78dbaebd3d698e00b inherit pub_methods_class_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wirtualny destruktor klasy bazowej.  <br /></td></tr>
+<tr class="separator:a7c6da6bd566a84c78dbaebd3d698e00b inherit pub_methods_class_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45c36c0215dc61dbf0f55178147ba4c inherit pub_methods_class_base_component" id="r_af45c36c0215dc61dbf0f55178147ba4c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_component.html#af45c36c0215dc61dbf0f55178147ba4c">Init</a> ()</td></tr>
+<tr class="memdesc:af45c36c0215dc61dbf0f55178147ba4c inherit pub_methods_class_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook inicjalizacyjny wywolywany po podpieciu komponentu.  <br /></td></tr>
+<tr class="separator:af45c36c0215dc61dbf0f55178147ba4c inherit pub_methods_class_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaeb7cf809c8412a35e73498bf040ec1 inherit pub_methods_class_base_component" id="r_adaeb7cf809c8412a35e73498bf040ec1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_component.html#adaeb7cf809c8412a35e73498bf040ec1">Update</a> ()</td></tr>
+<tr class="memdesc:adaeb7cf809c8412a35e73498bf040ec1 inherit pub_methods_class_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook aktualizacji wykonywany co klatke.  <br /></td></tr>
+<tr class="separator:adaeb7cf809c8412a35e73498bf040ec1 inherit pub_methods_class_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a9369611f73f766b35ab73883593d8d0b" id="r_a9369611f73f766b35ab73883593d8d0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9369611f73f766b35ab73883593d8d0b">shape</a></td></tr>
+<tr class="memdesc:a9369611f73f766b35ab73883593d8d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Figura lokalna przypieta do obiektu.  <br /></td></tr>
+<tr class="separator:a9369611f73f766b35ab73883593d8d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace342170525fd41b4375603102e2a3c9" id="r_ace342170525fd41b4375603102e2a3c9"><td class="memItemLeft" align="right" valign="top">sf::Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace342170525fd41b4375603102e2a3c9">color</a></td></tr>
+<tr class="memdesc:ace342170525fd41b4375603102e2a3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kolor rysowania figury.  <br /></td></tr>
+<tr class="separator:ace342170525fd41b4375603102e2a3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa54198dcdfc3afdbfefdcb6ebd5dccf" id="r_aaa54198dcdfc3afdbfefdcb6ebd5dccf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa54198dcdfc3afdbfefdcb6ebd5dccf">isFilled</a></td></tr>
+<tr class="memdesc:aaa54198dcdfc3afdbfefdcb6ebd5dccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga wyboru trybu: kontur lub wypelnienie.  <br /></td></tr>
+<tr class="separator:aaa54198dcdfc3afdbfefdcb6ebd5dccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Dodatkowe dziedziczone składowe</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_base_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_class_base_component')"><img src="closed.png" alt="-"/>&#160;Atrybuty publiczne dziedziczone z <a class="el" href="class_base_component.html">BaseComponent</a></td></tr>
+<tr class="memitem:a57d1c19f73e2cc486eca358114d3103e inherit pub_attribs_class_base_component" id="r_a57d1c19f73e2cc486eca358114d3103e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_component.html#a57d1c19f73e2cc486eca358114d3103e">gameObject</a> = nullptr</td></tr>
+<tr class="memdesc:a57d1c19f73e2cc486eca358114d3103e inherit pub_attribs_class_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaznik na obiekt, do ktorego komponent jest przypiety.  <br /></td></tr>
+<tr class="separator:a57d1c19f73e2cc486eca358114d3103e inherit pub_attribs_class_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Komponent wizualny rysujacy figure geometryczna powiazana z <a class="el" href="class_game_object.html" title="Bazowa jednostka sceny przechowujaca transformacje, komponenty i dzieci.">GameObject</a>. </p>
+<p>Figura jest zdefiniowana lokalnie, a podczas rysowania transformowana do przestrzeni swiata (rotacja + translacja). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00020">20</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="adc4486ec24191d8c196fc81ebac6693b" name="adc4486ec24191d8c196fc81ebac6693b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc4486ec24191d8c196fc81ebac6693b">&#9670;&#160;</a></span>ShapeComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ShapeComponent::ShapeComponent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>filled</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tworzy komponent ksztaltu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Figura lokalna. </td></tr>
+    <tr><td class="paramname">c</td><td>Kolor figury. </td></tr>
+    <tr><td class="paramname">filled</td><td>Czy figura ma byc wypelniona. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00033">33</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_shape_component_8h_source.html#l00023">color</a>, <a class="el" href="_shape_component_8h_source.html#l00024">isFilled</a> i <a class="el" href="_shape_component_8h_source.html#l00022">shape</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a0a769e760610d056453adfaeafa37868" name="a0a769e760610d056453adfaeafa37868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a769e760610d056453adfaeafa37868">&#9670;&#160;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShapeComponent::Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_renderer.html">Renderer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>renderer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rysuje figure po transformacji do przestrzeni swiata. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderer</td><td>Referencja do renderera. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementowana z <a class="el" href="class_base_component.html#a1059bf10acd2c43c65991ee57a6fdf75">BaseComponent</a>.</p>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00064">64</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_shape_component_8h_source.html#l00023">color</a>, <a class="el" href="_renderer_8cpp_source.html#l00051">Renderer::Draw()</a>, <a class="el" href="_renderer_8cpp_source.html#l00152">Renderer::Fill()</a>, <a class="el" href="_base_component_8h_source.html#l00018">BaseComponent::gameObject</a>, <a class="el" href="_shape_component_8h_source.html#l00024">isFilled</a>, <a class="el" href="_point2_d_8cpp_source.html#l00033">Point2D::Rotate()</a> i <a class="el" href="_shape_component_8h_source.html#l00022">shape</a>.</p>
+
+</div>
+</div>
+<a id="aefae19dac1803241faef24bb5c3997a5" name="aefae19dac1803241faef24bb5c3997a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefae19dac1803241faef24bb5c3997a5">&#9670;&#160;</a></span>GetColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Color ShapeComponent::GetColor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca aktualny kolor figury. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Kolor figury. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00048">48</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_shape_component_8h_source.html#l00023">color</a>.</p>
+
+</div>
+</div>
+<a id="adb544e1bf9640e6b9206f558af44840c" name="adb544e1bf9640e6b9206f558af44840c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb544e1bf9640e6b9206f558af44840c">&#9670;&#160;</a></span>SetColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShapeComponent::SetColor </td>
+          <td>(</td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>newColor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ustawia nowy kolor figury. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newColor</td><td>Docelowy kolor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00040">40</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_shape_component_8h_source.html#l00023">color</a>.</p>
+
+</div>
+</div>
+<a id="a197d01a3cf13cdac60af345bc5c4134f" name="a197d01a3cf13cdac60af345bc5c4134f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197d01a3cf13cdac60af345bc5c4134f">&#9670;&#160;</a></span>SetShape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShapeComponent::SetShape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a></td>          <td class="paramname"><span class="paramname"><em>newShape</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Podmienia przechowywana figure. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newShape</td><td>Nowa figura lokalna. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00056">56</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_shape_component_8h_source.html#l00022">shape</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="ace342170525fd41b4375603102e2a3c9" name="ace342170525fd41b4375603102e2a3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace342170525fd41b4375603102e2a3c9">&#9670;&#160;</a></span>color</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Color ShapeComponent::color</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kolor rysowania figury. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00023">23</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_shape_component_8h_source.html#l00064">Draw()</a>, <a class="el" href="_shape_component_8h_source.html#l00048">GetColor()</a>, <a class="el" href="_shape_component_8h_source.html#l00040">SetColor()</a> i <a class="el" href="_shape_component_8h_source.html#l00033">ShapeComponent()</a>.</p>
+
+</div>
+</div>
+<a id="aaa54198dcdfc3afdbfefdcb6ebd5dccf" name="aaa54198dcdfc3afdbfefdcb6ebd5dccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa54198dcdfc3afdbfefdcb6ebd5dccf">&#9670;&#160;</a></span>isFilled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ShapeComponent::isFilled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flaga wyboru trybu: kontur lub wypelnienie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00024">24</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_shape_component_8h_source.html#l00064">Draw()</a> i <a class="el" href="_shape_component_8h_source.html#l00033">ShapeComponent()</a>.</p>
+
+</div>
+</div>
+<a id="a9369611f73f766b35ab73883593d8d0b" name="a9369611f73f766b35ab73883593d8d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9369611f73f766b35ab73883593d8d0b">&#9670;&#160;</a></span>shape</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__module__components.html#gabeb1ebed68da6ccda801c7a8717e0fe0">ShapeType</a> ShapeComponent::shape</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Figura lokalna przypieta do obiektu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_shape_component_8h_source.html#l00022">22</a> pliku <a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_shape_component_8h_source.html#l00064">Draw()</a>, <a class="el" href="_shape_component_8h_source.html#l00056">SetShape()</a> i <a class="el" href="_shape_component_8h_source.html#l00033">ShapeComponent()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li><a class="el" href="_shape_component_8h_source.html">ShapeComponent.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_shape_component.html">ShapeComponent</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

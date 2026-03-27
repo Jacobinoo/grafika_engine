@@ -1,0 +1,29 @@
+/**
+ * @defgroup module_engine Silnik
+ * @brief Glowna petla gry, zarzadzanie cyklem zycia i scena.
+ */
+
+/**
+ * @defgroup module_components Komponenty
+ * @brief Komponenty obiektow gry i logika renderowania figur.
+ */
+
+/**
+ * @defgroup module_math Matematyka
+ * @brief Typy matematyczne i prymitywy geometryczne.
+ */
+
+/**
+ * @defgroup module_renderer Renderowanie
+ * @brief Rasteryzacja i wypelnianie figur w buforze pikseli.
+ */
+
+/**
+ * @defgroup module_input Wejscie
+ * @brief Obsluga klawiatury i myszy oparta o akcje.
+ */
+
+/**
+ * @defgroup module_demo Demo Gry
+ * @brief Przykladowa implementacja gry wykorzystujaca silnik.
+ */

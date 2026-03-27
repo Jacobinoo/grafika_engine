@@ -1,0 +1,862 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafika Engine: Dokumentacja klasy Renderer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafika Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik 2D i gra demonstracyjna oparta o SFML 3</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_renderer.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="class_renderer-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy Renderer<div class="ingroups"><a class="el" href="group__module__renderer.html">Renderowanie</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_renderer.html" title="Renderer programowy oparty o bufor pikseli RGBA.">Renderer</a> programowy oparty o bufor pikseli RGBA.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_renderer_8h_source.html">Renderer.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a05246b7f7bc620b00f2a6b29103c830c" id="r_a05246b7f7bc620b00f2a6b29103c830c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05246b7f7bc620b00f2a6b29103c830c">Renderer</a> (unsigned int w, unsigned int h)</td></tr>
+<tr class="memdesc:a05246b7f7bc620b00f2a6b29103c830c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy renderer o zadanych wymiarach.  <br /></td></tr>
+<tr class="separator:a05246b7f7bc620b00f2a6b29103c830c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4267661b3e731799efb0279afe1377" id="r_a1d4267661b3e731799efb0279afe1377"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d4267661b3e731799efb0279afe1377">PutPixel</a> (int x, int y, sf::Color color)</td></tr>
+<tr class="memdesc:a1d4267661b3e731799efb0279afe1377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia pojedynczy piksel w buforze.  <br /></td></tr>
+<tr class="separator:a1d4267661b3e731799efb0279afe1377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f37f7b4a27598c8fbd78a21d59c319" id="r_a55f37f7b4a27598c8fbd78a21d59c319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55f37f7b4a27598c8fbd78a21d59c319">Clear</a> (sf::Color color)</td></tr>
+<tr class="memdesc:a55f37f7b4a27598c8fbd78a21d59c319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czysci caly bufor jednym kolorem.  <br /></td></tr>
+<tr class="separator:a55f37f7b4a27598c8fbd78a21d59c319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4122ab041dbc7d1738406fbe5372c351" id="r_a4122ab041dbc7d1738406fbe5372c351"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4122ab041dbc7d1738406fbe5372c351">Draw</a> (const <a class="el" href="class_line_segment.html">LineSegment</a> &amp;line, sf::Color color)</td></tr>
+<tr class="memdesc:a4122ab041dbc7d1738406fbe5372c351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje kontur odcinka.  <br /></td></tr>
+<tr class="separator:a4122ab041dbc7d1738406fbe5372c351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87851542938d9b4831bd91927f0c8ac" id="r_af87851542938d9b4831bd91927f0c8ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af87851542938d9b4831bd91927f0c8ac">Draw</a> (const <a class="el" href="class_triangle.html">Triangle</a> &amp;triangle, sf::Color color)</td></tr>
+<tr class="memdesc:af87851542938d9b4831bd91927f0c8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje kontur trojkata.  <br /></td></tr>
+<tr class="separator:af87851542938d9b4831bd91927f0c8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c000cae0009a6a09643ac9813f3e46" id="r_a84c000cae0009a6a09643ac9813f3e46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84c000cae0009a6a09643ac9813f3e46">Draw</a> (const <a class="el" href="class_rectangle.html">Rectangle</a> &amp;rect, sf::Color color)</td></tr>
+<tr class="memdesc:a84c000cae0009a6a09643ac9813f3e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje kontur prostokata.  <br /></td></tr>
+<tr class="separator:a84c000cae0009a6a09643ac9813f3e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36b0132f957ba315f40f75be993d1ca" id="r_ac36b0132f957ba315f40f75be993d1ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac36b0132f957ba315f40f75be993d1ca">Draw</a> (const <a class="el" href="class_polygon.html">Polygon</a> &amp;polygon, sf::Color color)</td></tr>
+<tr class="memdesc:ac36b0132f957ba315f40f75be993d1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje kontur wielokata.  <br /></td></tr>
+<tr class="separator:ac36b0132f957ba315f40f75be993d1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe3c5f8c49138c6091a28cc5b1747d8" id="r_a7fe3c5f8c49138c6091a28cc5b1747d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fe3c5f8c49138c6091a28cc5b1747d8">Draw</a> (const <a class="el" href="class_circle.html">Circle</a> &amp;circle, sf::Color color)</td></tr>
+<tr class="memdesc:a7fe3c5f8c49138c6091a28cc5b1747d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje kontur okregu.  <br /></td></tr>
+<tr class="separator:a7fe3c5f8c49138c6091a28cc5b1747d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab490ab43fc8504ceb5d8347930b844bf" id="r_ab490ab43fc8504ceb5d8347930b844bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab490ab43fc8504ceb5d8347930b844bf">Fill</a> (const <a class="el" href="class_triangle.html">Triangle</a> &amp;triangle, sf::Color color)</td></tr>
+<tr class="memdesc:ab490ab43fc8504ceb5d8347930b844bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wypelnia trojkat.  <br /></td></tr>
+<tr class="separator:ab490ab43fc8504ceb5d8347930b844bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ca2f3de6d2a76c5b1e033396cf2e00" id="r_ae5ca2f3de6d2a76c5b1e033396cf2e00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5ca2f3de6d2a76c5b1e033396cf2e00">Fill</a> (const <a class="el" href="class_rectangle.html">Rectangle</a> &amp;rect, sf::Color color)</td></tr>
+<tr class="memdesc:ae5ca2f3de6d2a76c5b1e033396cf2e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wypelnia prostokat.  <br /></td></tr>
+<tr class="separator:ae5ca2f3de6d2a76c5b1e033396cf2e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e3a367e3b51afc4530b5e150b149f52" id="r_a9e3a367e3b51afc4530b5e150b149f52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e3a367e3b51afc4530b5e150b149f52">Fill</a> (const <a class="el" href="class_polygon.html">Polygon</a> &amp;polygon, sf::Color color)</td></tr>
+<tr class="memdesc:a9e3a367e3b51afc4530b5e150b149f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wypelnia wielokat algorytmem scanline.  <br /></td></tr>
+<tr class="separator:a9e3a367e3b51afc4530b5e150b149f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab502f364abb5b8ae3ab02b6c6ffb4600" id="r_ab502f364abb5b8ae3ab02b6c6ffb4600"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab502f364abb5b8ae3ab02b6c6ffb4600">Fill</a> (const <a class="el" href="class_circle.html">Circle</a> &amp;circle, sf::Color color)</td></tr>
+<tr class="memdesc:ab502f364abb5b8ae3ab02b6c6ffb4600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wypelnia kolo algorytmem scanline opartym o Bresenhama.  <br /></td></tr>
+<tr class="separator:ab502f364abb5b8ae3ab02b6c6ffb4600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c00cd0a9167a91d176f5de97137aa9" id="r_a13c00cd0a9167a91d176f5de97137aa9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13c00cd0a9167a91d176f5de97137aa9">DrawBitmapText</a> (const std::string &amp;text, int startX, int startY, const sf::Image &amp;fontImage, float scale=1.0f)</td></tr>
+<tr class="memdesc:a13c00cd0a9167a91d176f5de97137aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje tekst bitmapowy z atlasu znakow 16x16.  <br /></td></tr>
+<tr class="separator:a13c00cd0a9167a91d176f5de97137aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab89044fadb8b6116041c7a4621a7e57b" id="r_ab89044fadb8b6116041c7a4621a7e57b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab89044fadb8b6116041c7a4621a7e57b">DrawSprite</a> (int startX, int startY, const sf::Image &amp;image, int srcX, int srcY, int frameW, int frameH, float scale=1.0f)</td></tr>
+<tr class="memdesc:ab89044fadb8b6116041c7a4621a7e57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje klatke sprite'a z tekstury z opcjonalnym skalowaniem.  <br /></td></tr>
+<tr class="separator:ab89044fadb8b6116041c7a4621a7e57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3dd2a363eb6ab3f4908fc943239f729" id="r_ad3dd2a363eb6ab3f4908fc943239f729"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3dd2a363eb6ab3f4908fc943239f729">RenderToWindow</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:ad3dd2a363eb6ab3f4908fc943239f729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przesyla bufor pikseli do tekstury i rysuje go w oknie.  <br /></td></tr>
+<tr class="separator:ad3dd2a363eb6ab3f4908fc943239f729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a15d15a56eef6d2680630f424e0037456" id="r_a15d15a56eef6d2680630f424e0037456"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15d15a56eef6d2680630f424e0037456">width</a></td></tr>
+<tr class="memdesc:a15d15a56eef6d2680630f424e0037456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szerokosc bufora renderowania.  <br /></td></tr>
+<tr class="separator:a15d15a56eef6d2680630f424e0037456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35339b2c9e5834eb361c7e3e11f4e98" id="r_ad35339b2c9e5834eb361c7e3e11f4e98"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad35339b2c9e5834eb361c7e3e11f4e98">height</a></td></tr>
+<tr class="memdesc:ad35339b2c9e5834eb361c7e3e11f4e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wysokosc bufora renderowania.  <br /></td></tr>
+<tr class="separator:ad35339b2c9e5834eb361c7e3e11f4e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b77f7c711d12eb5f977814354b6dfb" id="r_a57b77f7c711d12eb5f977814354b6dfb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57b77f7c711d12eb5f977814354b6dfb">pixelBuffer</a></td></tr>
+<tr class="memdesc:a57b77f7c711d12eb5f977814354b6dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surowy bufor pikseli w formacie RGBA.  <br /></td></tr>
+<tr class="separator:a57b77f7c711d12eb5f977814354b6dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c06aa9e49e615992b140c1f0dd7ef56" id="r_a8c06aa9e49e615992b140c1f0dd7ef56"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c06aa9e49e615992b140c1f0dd7ef56">texture</a></td></tr>
+<tr class="memdesc:a8c06aa9e49e615992b140c1f0dd7ef56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura SFML aktualizowana z bufora.  <br /></td></tr>
+<tr class="separator:a8c06aa9e49e615992b140c1f0dd7ef56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3b009da2e885eae201d408b85bc758" id="r_a2f3b009da2e885eae201d408b85bc758"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f3b009da2e885eae201d408b85bc758">sprite</a></td></tr>
+<tr class="memdesc:a2f3b009da2e885eae201d408b85bc758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite prezentujacy teksture na oknie.  <br /></td></tr>
+<tr class="separator:a2f3b009da2e885eae201d408b85bc758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p><a class="el" href="class_renderer.html" title="Renderer programowy oparty o bufor pikseli RGBA.">Renderer</a> programowy oparty o bufor pikseli RGBA. </p>
+<p>Klasa implementuje rysowanie prymitywow geometrycznych bezposrednio do tablicy bajtow, a nastepnie przesyla bufor do tekstury SFML. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8h_source.html#l00016">16</a> pliku <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a05246b7f7bc620b00f2a6b29103c830c" name="a05246b7f7bc620b00f2a6b29103c830c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05246b7f7bc620b00f2a6b29103c830c">&#9670;&#160;</a></span>Renderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Renderer::Renderer </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tworzy renderer o zadanych wymiarach. </p>
+<p>Tworzy bufor renderowania i zasoby SFML.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Szerokosc bufora. </td></tr>
+    <tr><td class="paramname">h</td><td>Wysokosc bufora. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00008">8</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8h_source.html#l00019">height</a>, <a class="el" href="_renderer_8h_source.html#l00020">pixelBuffer</a>, <a class="el" href="_renderer_8h_source.html#l00022">sprite</a>, <a class="el" href="_renderer_8h_source.html#l00021">texture</a> i <a class="el" href="_renderer_8h_source.html#l00018">width</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a55f37f7b4a27598c8fbd78a21d59c319" name="a55f37f7b4a27598c8fbd78a21d59c319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55f37f7b4a27598c8fbd78a21d59c319">&#9670;&#160;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Clear </td>
+          <td>(</td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Czysci caly bufor jednym kolorem. </p>
+<p>Czyci caly bufor wskazanym kolorem.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>Kolor tla. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00037">37</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8h_source.html#l00020">pixelBuffer</a>.</p>
+
+</div>
+</div>
+<a id="a7fe3c5f8c49138c6091a28cc5b1747d8" name="a7fe3c5f8c49138c6091a28cc5b1747d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe3c5f8c49138c6091a28cc5b1747d8">&#9670;&#160;</a></span>Draw() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>circle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje kontur okregu. </p>
+<p>Rysuje kontur okregu algorytmem midpoint/Bresenham circle. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00102">102</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_primitives_8h_source.html#l00067">Circle::center</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>, <a class="el" href="_primitives_8h_source.html#l00068">Circle::radius</a>, <a class="el" href="_point2_d_8h_source.html#l00009">Point2D::x</a> i <a class="el" href="_point2_d_8h_source.html#l00010">Point2D::y</a>.</p>
+
+</div>
+</div>
+<a id="a4122ab041dbc7d1738406fbe5372c351" name="a4122ab041dbc7d1738406fbe5372c351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4122ab041dbc7d1738406fbe5372c351">&#9670;&#160;</a></span>Draw() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_line_segment.html">LineSegment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje kontur odcinka. </p>
+<p>Rysuje odcinek algorytmem Bresenhama. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00051">51</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_primitives_8h_source.html#l00011">LineSegment::p1</a>, <a class="el" href="_primitives_8h_source.html#l00012">LineSegment::p2</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>, <a class="el" href="_point2_d_8h_source.html#l00009">Point2D::x</a> i <a class="el" href="_point2_d_8h_source.html#l00010">Point2D::y</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_renderer_8cpp_source.html#l00091">Draw()</a>, <a class="el" href="_renderer_8cpp_source.html#l00079">Draw()</a>, <a class="el" href="_renderer_8cpp_source.html#l00072">Draw()</a> i <a class="el" href="_shape_component_8h_source.html#l00064">ShapeComponent::Draw()</a>.</p>
+
+</div>
+</div>
+<a id="ac36b0132f957ba315f40f75be993d1ca" name="ac36b0132f957ba315f40f75be993d1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36b0132f957ba315f40f75be993d1ca">&#9670;&#160;</a></span>Draw() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_polygon.html">Polygon</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>polygon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje kontur wielokata. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00091">91</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8cpp_source.html#l00051">Draw()</a> i <a class="el" href="_primitives_8h_source.html#l00084">Polygon::vertices</a>.</p>
+
+</div>
+</div>
+<a id="a84c000cae0009a6a09643ac9813f3e46" name="a84c000cae0009a6a09643ac9813f3e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c000cae0009a6a09643ac9813f3e46">&#9670;&#160;</a></span>Draw() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rectangle.html">Rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje kontur prostokata. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00079">79</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8cpp_source.html#l00051">Draw()</a>, <a class="el" href="_primitives_8h_source.html#l00049">Rectangle::height</a>, <a class="el" href="_primitives_8h_source.html#l00047">Rectangle::topLeft</a>, <a class="el" href="_primitives_8h_source.html#l00048">Rectangle::width</a>, <a class="el" href="_point2_d_8h_source.html#l00009">Point2D::x</a> i <a class="el" href="_point2_d_8h_source.html#l00010">Point2D::y</a>.</p>
+
+</div>
+</div>
+<a id="af87851542938d9b4831bd91927f0c8ac" name="af87851542938d9b4831bd91927f0c8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87851542938d9b4831bd91927f0c8ac">&#9670;&#160;</a></span>Draw() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_triangle.html">Triangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>triangle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje kontur trojkata. </p>
+<p>Rysuje kontur trojkata trzema odcinkami. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00072">72</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8cpp_source.html#l00051">Draw()</a>, <a class="el" href="_primitives_8h_source.html#l00028">Triangle::p1</a>, <a class="el" href="_primitives_8h_source.html#l00029">Triangle::p2</a> i <a class="el" href="_primitives_8h_source.html#l00030">Triangle::p3</a>.</p>
+
+</div>
+</div>
+<a id="a13c00cd0a9167a91d176f5de97137aa9" name="a13c00cd0a9167a91d176f5de97137aa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c00cd0a9167a91d176f5de97137aa9">&#9670;&#160;</a></span>DrawBitmapText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::DrawBitmapText </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>startX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>startY</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Image &amp;</td>          <td class="paramname"><span class="paramname"><em>fontImage</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.0f</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje tekst bitmapowy z atlasu znakow 16x16. </p>
+<p>Rysuje tekst bitmapowy z atlasu znakow ASCII 16x16.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Napis ASCII. </td></tr>
+    <tr><td class="paramname">startX</td><td>Pozycja startowa X. </td></tr>
+    <tr><td class="paramname">startY</td><td>Pozycja startowa Y. </td></tr>
+    <tr><td class="paramname">fontImage</td><td>Obraz atlasu czcionki. </td></tr>
+    <tr><td class="paramname">scale</td><td>Skala rysowania znaku. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00257">257</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>.</p>
+
+</div>
+</div>
+<a id="ab89044fadb8b6116041c7a4621a7e57b" name="ab89044fadb8b6116041c7a4621a7e57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89044fadb8b6116041c7a4621a7e57b">&#9670;&#160;</a></span>DrawSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::DrawSprite </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>startX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>startY</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Image &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>srcX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>srcY</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>frameW</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>frameH</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.0f</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje klatke sprite'a z tekstury z opcjonalnym skalowaniem. </p>
+<p>Rysuje klatke sprite'a i skaluje ja programowo.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startX</td><td>Pozycja srodka sprite'a X. </td></tr>
+    <tr><td class="paramname">startY</td><td>Pozycja srodka sprite'a Y. </td></tr>
+    <tr><td class="paramname">image</td><td>Tekstura zrodlowa. </td></tr>
+    <tr><td class="paramname">srcX</td><td>X lewego-gornego rogu klatki w atlasie. </td></tr>
+    <tr><td class="paramname">srcY</td><td>Y lewego-gornego rogu klatki w atlasie. </td></tr>
+    <tr><td class="paramname">frameW</td><td>Szerokosc klatki. </td></tr>
+    <tr><td class="paramname">frameH</td><td>Wysokosc klatki. </td></tr>
+    <tr><td class="paramname">scale</td><td>Skala rysowania. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00299">299</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>.</p>
+
+</div>
+</div>
+<a id="ab502f364abb5b8ae3ab02b6c6ffb4600" name="ab502f364abb5b8ae3ab02b6c6ffb4600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab502f364abb5b8ae3ab02b6c6ffb4600">&#9670;&#160;</a></span>Fill() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Fill </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>circle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wypelnia kolo algorytmem scanline opartym o Bresenhama. </p>
+<p>Wypelnia kolo scanline'ami wyprowadzonymi z Bresenhama. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00216">216</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_primitives_8h_source.html#l00067">Circle::center</a>, <a class="el" href="_renderer_8h_source.html#l00019">height</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>, <a class="el" href="_primitives_8h_source.html#l00068">Circle::radius</a>, <a class="el" href="_renderer_8h_source.html#l00018">width</a>, <a class="el" href="_point2_d_8h_source.html#l00009">Point2D::x</a> i <a class="el" href="_point2_d_8h_source.html#l00010">Point2D::y</a>.</p>
+
+</div>
+</div>
+<a id="a9e3a367e3b51afc4530b5e150b149f52" name="a9e3a367e3b51afc4530b5e150b149f52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e3a367e3b51afc4530b5e150b149f52">&#9670;&#160;</a></span>Fill() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Fill </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_polygon.html">Polygon</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>polygon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wypelnia wielokat algorytmem scanline. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00176">176</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>, <a class="el" href="_primitives_8h_source.html#l00084">Polygon::vertices</a>, <a class="el" href="_point2_d_8h_source.html#l00009">Point2D::x</a> i <a class="el" href="_point2_d_8h_source.html#l00010">Point2D::y</a>.</p>
+
+</div>
+</div>
+<a id="ae5ca2f3de6d2a76c5b1e033396cf2e00" name="ae5ca2f3de6d2a76c5b1e033396cf2e00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ca2f3de6d2a76c5b1e033396cf2e00">&#9670;&#160;</a></span>Fill() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Fill </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rectangle.html">Rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wypelnia prostokat. </p>
+<p>Wypelnia prostokat przez rasteryzacje prostego obszaru osiowego. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00128">128</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_primitives_8h_source.html#l00049">Rectangle::height</a>, <a class="el" href="_renderer_8h_source.html#l00019">height</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>, <a class="el" href="_primitives_8h_source.html#l00047">Rectangle::topLeft</a>, <a class="el" href="_primitives_8h_source.html#l00048">Rectangle::width</a>, <a class="el" href="_renderer_8h_source.html#l00018">width</a>, <a class="el" href="_point2_d_8h_source.html#l00009">Point2D::x</a> i <a class="el" href="_point2_d_8h_source.html#l00010">Point2D::y</a>.</p>
+
+</div>
+</div>
+<a id="ab490ab43fc8504ceb5d8347930b844bf" name="ab490ab43fc8504ceb5d8347930b844bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab490ab43fc8504ceb5d8347930b844bf">&#9670;&#160;</a></span>Fill() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::Fill </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_triangle.html">Triangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>triangle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wypelnia trojkat. </p>
+<p>Wypelnia trojkat testem punkt-w-trojkacie opartym o znaki krawedzi. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00152">152</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8cpp_source.html#l00145">EdgeSign()</a>, <a class="el" href="_renderer_8h_source.html#l00019">height</a>, <a class="el" href="_primitives_8h_source.html#l00028">Triangle::p1</a>, <a class="el" href="_primitives_8h_source.html#l00029">Triangle::p2</a>, <a class="el" href="_primitives_8h_source.html#l00030">Triangle::p3</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>, <a class="el" href="_renderer_8h_source.html#l00018">width</a>, <a class="el" href="_point2_d_8h_source.html#l00009">Point2D::x</a> i <a class="el" href="_point2_d_8h_source.html#l00010">Point2D::y</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_shape_component_8h_source.html#l00064">ShapeComponent::Draw()</a>.</p>
+
+</div>
+</div>
+<a id="a1d4267661b3e731799efb0279afe1377" name="a1d4267661b3e731799efb0279afe1377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4267661b3e731799efb0279afe1377">&#9670;&#160;</a></span>PutPixel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::PutPixel </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia pojedynczy piksel w buforze. </p>
+<p>Wpisuje pojedynczy piksel do bufora RGBA.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Wspolrzedna X. </td></tr>
+    <tr><td class="paramname">y</td><td>Wspolrzedna Y. </td></tr>
+    <tr><td class="paramname">color</td><td>Kolor RGBA piksela. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00023">23</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8h_source.html#l00019">height</a>, <a class="el" href="_renderer_8h_source.html#l00020">pixelBuffer</a> i <a class="el" href="_renderer_8h_source.html#l00018">width</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_renderer_8cpp_source.html#l00102">Draw()</a>, <a class="el" href="_renderer_8cpp_source.html#l00051">Draw()</a>, <a class="el" href="_renderer_8cpp_source.html#l00257">DrawBitmapText()</a>, <a class="el" href="_renderer_8cpp_source.html#l00299">DrawSprite()</a>, <a class="el" href="_renderer_8cpp_source.html#l00216">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00176">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00128">Fill()</a> i <a class="el" href="_renderer_8cpp_source.html#l00152">Fill()</a>.</p>
+
+</div>
+</div>
+<a id="ad3dd2a363eb6ab3f4908fc943239f729" name="ad3dd2a363eb6ab3f4908fc943239f729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3dd2a363eb6ab3f4908fc943239f729">&#9670;&#160;</a></span>RenderToWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::RenderToWindow </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przesyla bufor pikseli do tekstury i rysuje go w oknie. </p>
+<p>Kopiuje bufor do tekstury i wyswietla sprite w oknie.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Okno docelowe SFML. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8cpp_source.html#l00328">328</a> pliku <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_renderer_8h_source.html#l00020">pixelBuffer</a>, <a class="el" href="_renderer_8h_source.html#l00022">sprite</a> i <a class="el" href="_renderer_8h_source.html#l00021">texture</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="ad35339b2c9e5834eb361c7e3e11f4e98" name="ad35339b2c9e5834eb361c7e3e11f4e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad35339b2c9e5834eb361c7e3e11f4e98">&#9670;&#160;</a></span>height</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Renderer::height</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wysokosc bufora renderowania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8h_source.html#l00019">19</a> pliku <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_renderer_8cpp_source.html#l00216">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00128">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00152">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a> i <a class="el" href="_renderer_8cpp_source.html#l00008">Renderer()</a>.</p>
+
+</div>
+</div>
+<a id="a57b77f7c711d12eb5f977814354b6dfb" name="a57b77f7c711d12eb5f977814354b6dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57b77f7c711d12eb5f977814354b6dfb">&#9670;&#160;</a></span>pixelBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::uint8_t&gt; Renderer::pixelBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Surowy bufor pikseli w formacie RGBA. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8h_source.html#l00020">20</a> pliku <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_renderer_8cpp_source.html#l00037">Clear()</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a>, <a class="el" href="_renderer_8cpp_source.html#l00008">Renderer()</a> i <a class="el" href="_renderer_8cpp_source.html#l00328">RenderToWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a2f3b009da2e885eae201d408b85bc758" name="a2f3b009da2e885eae201d408b85bc758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f3b009da2e885eae201d408b85bc758">&#9670;&#160;</a></span>sprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite Renderer::sprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprite prezentujacy teksture na oknie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8h_source.html#l00022">22</a> pliku <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_renderer_8cpp_source.html#l00008">Renderer()</a> i <a class="el" href="_renderer_8cpp_source.html#l00328">RenderToWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a8c06aa9e49e615992b140c1f0dd7ef56" name="a8c06aa9e49e615992b140c1f0dd7ef56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c06aa9e49e615992b140c1f0dd7ef56">&#9670;&#160;</a></span>texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture Renderer::texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura SFML aktualizowana z bufora. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8h_source.html#l00021">21</a> pliku <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_renderer_8cpp_source.html#l00008">Renderer()</a> i <a class="el" href="_renderer_8cpp_source.html#l00328">RenderToWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a15d15a56eef6d2680630f424e0037456" name="a15d15a56eef6d2680630f424e0037456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d15a56eef6d2680630f424e0037456">&#9670;&#160;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Renderer::width</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Szerokosc bufora renderowania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_renderer_8h_source.html#l00018">18</a> pliku <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_renderer_8cpp_source.html#l00216">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00128">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00152">Fill()</a>, <a class="el" href="_renderer_8cpp_source.html#l00023">PutPixel()</a> i <a class="el" href="_renderer_8cpp_source.html#l00008">Renderer()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_renderer_8h_source.html">Renderer.h</a></li>
+<li><a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_renderer.html">Renderer</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
