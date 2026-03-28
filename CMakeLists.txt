@@ -54,6 +54,7 @@ if(BUILD_DOCS)
             COMMENT "Generating API documentation with Doxygen"
             VERBATIM
         )
+        message(STATUS "Doxygen docs generating")
     else()
         message(STATUS "Doxygen not found: 'docs' target will not be available.")
     endif()

@@ -12,7 +12,6 @@ Renderer::Renderer(unsigned int w, unsigned int h)
     // Bufor ma 4 bajty na piksel: R, G, B, A.
     pixelBuffer.resize(width * height * 4, 0);
 
-    // SFML 3: resize() zwraca false, gdy alokacja tekstury sie nie powiedzie.
     if (!texture.resize({width, height})) {
         throw std::runtime_error("Renderer: failed to allocate SFML texture");
     }
