@@ -3,6 +3,19 @@ project(GameEngine LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+if(UNIX AND NOT APPLE)
+    # SFML's window module requires these X11 components on Linux.
+    find_package(X11 QUIET COMPONENTS Xrandr Xcursor Xi)
+    if(NOT X11_FOUND OR NOT TARGET X11::Xrandr OR NOT TARGET X11::Xcursor OR NOT TARGET X11::Xi)
+        message(FATAL_ERROR
+            "Missing Linux development dependencies for SFML (Xrandr/Xcursor/Xi).\n"
+            "Install them on Debian/Ubuntu with:\n"
+            "  sudo apt update\n"
+            "  sudo apt install libxrandr-dev libxcursor-dev libxi-dev\n"
+        )
+    endif()
+endif()
+
 include(FetchContent)
 fetchcontent_declare(SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
