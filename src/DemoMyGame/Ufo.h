@@ -51,10 +51,9 @@ public:
             Point2D mousePos = Input::GetMousePosition(engine.GetWindow());
             Point2D pos = GetWorldPosition();
 
-            // Hit-test jest uproszczony do AABB 20x20 wokol pozycji obiektu.
-            // To szybkie rozwiazanie demonstracyjne, ale nieprecyzyjne dla okregu.
-            bool isHovered = (mousePos.x >= pos.x && mousePos.x <= pos.x + 20.0f &&
-                                mousePos.y >= pos.y && mousePos.y <= pos.y + 20.0f);
+            Point2D d = mousePos - pos;
+
+            bool isHovered = ((d.x * d.x) + (d.y * d.y)) <= (20.0f * 20.0f);
 
             if (isHovered && Input::IsActionJustPressed("Click")) {
                 shapeComp->SetColor(Color::Yellow);
