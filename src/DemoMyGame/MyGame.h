@@ -4,6 +4,7 @@
 #include "Box.h"
 #include "Ship.h"
 #include "Ufo.h"
+#include "Poly.h"
 
 /**
  * @brief Przykladowa implementacja gry demonstracyjnej.
@@ -51,6 +52,10 @@ public:
 
         engine.Instantiate(
             std::make_unique<Box>((screenW/2)-200, screenH/2)
+        );
+
+        engine.Instantiate(
+            std::make_unique<Poly>((screenW/2)-600, screenH/2)
         );
     }
 
