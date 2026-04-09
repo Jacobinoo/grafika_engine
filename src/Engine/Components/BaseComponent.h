@@ -27,6 +27,7 @@ public:
     virtual void Update() {}
 
     /**
+
      * @brief Hook rysowania wykonywany podczas renderowania obiektu.
      * @param renderer Referencja do renderera.
      */

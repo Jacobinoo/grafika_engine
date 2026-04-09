@@ -53,6 +53,7 @@ public:
     void Draw(const Polygon& polygon, sf::Color color);
     /** @brief Rysuje kontur okregu. */
     void Draw(const Circle& circle, sf::Color color);
+    void Draw(const Ellipse& ellipse, sf::Color color);
 
     /** @brief Wypelnia trojkat. */
     void Fill(const Triangle& triangle, sf::Color color);
@@ -62,6 +63,7 @@ public:
     void Fill(const Polygon& polygon, sf::Color color);
     /** @brief Wypelnia kolo algorytmem scanline opartym o Bresenhama. */
     void Fill(const Circle& circle, sf::Color color);
+    void Fill(const Ellipse& ellipse, sf::Color color);
 
     /**
      * @brief Rysuje tekst bitmapowy z atlasu znakow 16x16.

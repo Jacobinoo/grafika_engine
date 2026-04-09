@@ -46,9 +46,6 @@ public:
             std::make_unique<Ship>(screenW/2, screenH/2)
         );
 
-        engine.Instantiate(
-            std::make_unique<Ufo>((screenW/2)-50, screenH/2)
-        );
 
         engine.Instantiate(
             std::make_unique<Box>((screenW/2)-200, screenH/2)
@@ -56,6 +53,10 @@ public:
 
         engine.Instantiate(
             std::make_unique<Poly>((screenW/2)-600, screenH/2)
+        );
+
+                engine.Instantiate(
+            std::make_unique<Ufo>((screenW/2)-50, screenH/2)
         );
     }
 

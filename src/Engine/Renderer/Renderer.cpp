@@ -124,6 +124,64 @@ void Renderer::Draw(const Circle& circle, sf::Color color) {
     }
 }
 
+void Renderer::Draw(const Ellipse& ellipse, sf::Color color) {
+    int rx = std::round(ellipse.rx);
+    int ry = std::round(ellipse.ry);
+    int cx = std::round(ellipse.center.x);
+    int cy = std::round(ellipse.center.y);
+
+    int x = 0;
+    int y = ry;
+
+    // Region 1
+    float d1 = (ry * ry) - (rx * rx * ry) + (0.25f * rx * rx);
+    int dx = 2 * ry * ry * x;
+    int dy = 2 * rx * rx * y;
+
+    while (dx < dy) {
+        PutPixel(cx + x, cy + y, color);
+        PutPixel(cx - x, cy + y, color);
+        PutPixel(cx + x, cy - y, color);
+        PutPixel(cx - x, cy - y, color);
+
+        if (d1 < 0) {
+            x++;
+            dx += (2 * ry * ry);
+            d1 += dx + (ry * ry);
+        } else {
+            x++;
+            y--;
+            dx += (2 * ry * ry);
+            dy -= (2 * rx * rx);
+            d1 += dx - dy + (ry * ry);
+        }
+    }
+
+    // Region 2
+    float d2 = ((ry * ry) * ((x + 0.5f) * (x + 0.5f))) +
+               ((rx * rx) * ((y - 1) * (y - 1))) -
+               (rx * rx * ry * ry);
+
+    while (y >= 0) {
+        PutPixel(cx + x, cy + y, color);
+        PutPixel(cx - x, cy + y, color);
+        PutPixel(cx + x, cy - y, color);
+        PutPixel(cx - x, cy - y, color);
+
+        if (d2 > 0) {
+            y--;
+            dy -= (2 * rx * rx);
+            d2 += (rx * rx) - dy;
+        } else {
+            y--;
+            x++;
+            dx += (2 * ry * ry);
+            dy -= (2 * rx * rx);
+            d2 += dx - dy + (rx * rx);
+        }
+    }
+}
+
 // --- WYPEŁNIANIE ---
 
 /** @brief Wypelnia prostokat przez rasteryzacje prostego obszaru osiowego. */
@@ -250,6 +308,32 @@ void Renderer::Fill(const Circle& circle, sf::Color color) {
         } else {
             d = d + 4 * x + 6;
         }
+    }
+}
+
+void Renderer::Fill(const Ellipse& ellipse, sf::Color color) {
+    int rx = std::round(ellipse.rx);
+    int ry = std::round(ellipse.ry);
+    int cx = std::round(ellipse.center.x);
+    int cy = std::round(ellipse.center.y);
+
+    auto drawHorizontalLine = [&](int x1, int x2, int y_row) {
+        if (y_row < 0 || y_row >= (int)height) return;
+        int startX = std::max(0, std::min(x1, x2));
+        int endX = std::min((int)width - 1, std::max(x1, x2));
+        for (int px = startX; px <= endX; ++px) {
+            PutPixel(px, y_row, color);
+        }
+    };
+
+    // Rysujemy poziome pasy od górnej do dolnej krawędzi elipsy
+    for (int y = -ry; y <= ry; ++y) {
+        // Wyliczamy szerokość elipsy w danym rzędzie Y (Zabezpieczone przed ry=0)
+        if (ry == 0) continue; 
+        float dy = (float)y / ry;
+        int dx = std::round(rx * std::sqrt(1.0f - dy * dy));
+        
+        drawHorizontalLine(cx - dx, cx + dx, cy + y);
     }
 }
 

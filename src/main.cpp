@@ -26,7 +26,6 @@ int main() {
 
     /** @brief Instancja logiki gry. */
     MyGame game;
-
     engine.Run(&game);
 
     return 0;

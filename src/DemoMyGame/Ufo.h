@@ -23,12 +23,11 @@ public:
     Ufo(float startX, float startY) : GameObject("Player", startX, startY) {
         tag = "Player";
 
-        // Okrag z lokalnym srodkiem w (0,0) obraca sie i przesuwa razem z obiektem.
-        Circle circle = Circle({0.0f, 0.0f}, 20.0f);
+        // Elipsa
+        Ellipse ellipse = Ellipse({0.0f, 0.0f}, 20.0f, 10.0f);
 
-        AddComponent(std::make_unique<ShapeComponent>(circle, Color::Magenta, true));
-        
-        AddComponent(std::make_unique<ShapeComponent>(circle, Color::Black, false));
+        AddComponent(std::make_unique<ShapeComponent>(ellipse, Color::Magenta, true));
+
 
         /** @brief Szerokosc ekranu (obecnie nieuzywana). */
         unsigned int width = Engine::GetInstance().GetScreenWidth();
@@ -57,9 +56,16 @@ public:
 
             if (isHovered && Input::IsActionJustPressed("Click")) {
                 shapeComp->SetColor(Color::Yellow);
+
+                ShapeType newEllipse = shapeComp->GetShape();
+                if (std::holds_alternative<Ellipse>(newEllipse)) {
+                    Ellipse e = std::get<Ellipse>(newEllipse);
+                    e.rx += 50.0f; // Powiększamy promień poziomy
+                    e.ry += 50.0f; //promien pionowy
+                    shapeComp->SetShape(e);
+                }
             }
         }
-
         GameObject::Update();
     }
 };

@@ -43,4 +43,19 @@ public:
      * @return Punkt po obrocie.
      */
     Point2D Rotate(float angleRadians) const;
+    
+    /**
+     * @brief Przesuwa punkt o wektor offsetu.
+     */
+    Point2D Translate(const Point2D& offset) const;
+
+    /**
+     * @brief Skalowanie niejednorodne (osobno dla osi X i Y).
+     */
+    Point2D Scale(float scaleX, float scaleY) const;
+
+    /**
+     * @brief Skalowanie jednorodne (proporcjonalnie).
+     */
+    Point2D Scale(float uniformScale) const;
 };

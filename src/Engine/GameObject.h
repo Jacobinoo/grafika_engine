@@ -28,6 +28,8 @@ public:
     /** @brief Lokalny kat obrotu obiektu (w radianach). */
     float angle;
 
+    Point2D scale = {1.0f, 1.0f};
+
     /** @brief Wskaznik na rodzica w drzewie sceny; nullptr oznacza korzen. */
     GameObject* parent;
 
@@ -99,4 +101,7 @@ public:
      * @return Kat globalny liczony jako suma katow przodkow i lokalnego kata.
      */
     float GetWorldAngle() const;
+
+    Point2D GetWorldScale() const;
 };
+

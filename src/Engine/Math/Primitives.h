@@ -75,6 +75,16 @@ public:
     Circle(Point2D center, float radius) : center(center), radius(radius) {}
 };
 
+class Ellipse {
+public:
+    Point2D center;
+    float rx; // Promień poziomy
+    float ry; // Promień pionowy
+    
+    Ellipse(Point2D center, float rx, float ry) 
+        : center(center), rx(rx), ry(ry) {}
+};
+
 /**
  * @brief Wielokat opisany przez liste wierzcholkow.
  * @ingroup module_math

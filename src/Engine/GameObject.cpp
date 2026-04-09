@@ -92,3 +92,11 @@ float GameObject::GetWorldAngle() const {
     }
     return angle;
 }
+
+Point2D GameObject::GetWorldScale() const {
+    if (parent) {
+        Point2D pScale = parent->GetWorldScale();
+        return Point2D(scale.x * pScale.x, scale.y * pScale.y);
+    }
+    return scale;
+}

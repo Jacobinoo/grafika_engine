@@ -41,4 +41,17 @@ Point2D Point2D::Rotate(float angleRadians) const {
         x * cosA - y * sinA,
         x * sinA + y * cosA
     );
+    
+}
+
+Point2D Point2D::Translate(const Point2D& offset) const {
+    return Point2D(x + offset.x, y + offset.y);
+}
+
+Point2D Point2D::Scale(float scaleX, float scaleY) const {
+    return Point2D(x * scaleX, y * scaleY);
+}
+
+Point2D Point2D::Scale(float uniformScale) const {
+    return Point2D(x * uniformScale, y * uniformScale);
 }
