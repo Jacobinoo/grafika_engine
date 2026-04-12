@@ -112,6 +112,13 @@ void Engine::Run(IGame* game) {
             gameObjects.end()
         );
 
+        // Renderujemy od najnizszej do najwyzszej warstwy (jak z-index w CSS).
+        std::stable_sort(gameObjects.begin(), gameObjects.end(),
+            [](const std::unique_ptr<GameObject>& a, const std::unique_ptr<GameObject>& b) {
+                return a->renderLayer < b->renderLayer;
+            }
+        );
+
         // 5) Render klatki.
         window->clear(currentBackgroundColor);
         renderer->Clear(currentBackgroundColor);

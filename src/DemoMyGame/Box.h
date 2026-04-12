@@ -25,13 +25,8 @@ public:
     Box(float startX, float startY) : GameObject("Player", startX, startY) {
         tag = "Player";
 
-        // Prostokat jest zdefiniowany lokalnie wzgledem srodka obiektu.
-        Rectangle rect = Rectangle({-25.0f, -25.0f}, 50.0f, 50.0f);
-
-        AddComponent(std::make_unique<ShapeComponent>(rect, Color(165, 42,42, 255), true));
-        AddComponent(std::make_unique<ShapeComponent>(rect, Color::Black, false));
         AddComponent(std::make_unique<SpriteComponent>(
-            AssetManager::GetImage("Box"), 0, 0, 60, 60
+            AssetManager::GetImage("Grass"), 0, 0, 16, 16
         ));
     }
 

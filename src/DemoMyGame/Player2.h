@@ -11,11 +11,10 @@
  * @brief Obiekt gracza reprezentowany przez animowany sprite.
  * @ingroup module_demo
  */
-class Player : public GameObject {
+class Player2 : public GameObject {
 private:
     const float ROTATION_SPEED = 0.1f; /**< Predkosc obrotu statku [rad/klatke]. */
     float moveSpeed = 4.0f; /**< Predkosc chodzenia */
-    float runSpeed = 8.0f; /**< Predkosc biegania */
 
     AnimatedSpriteComponent* anim; /**< Wskaznik na komponent animacji, aby latwo zmieniac animacje w logice gry. */
 
@@ -25,8 +24,8 @@ public:
      * @param startX Pozycja poczatkowa X.
      * @param startY Pozycja poczatkowa Y.
      */
-    Player(float startX, float startY) : GameObject("Player", startX, startY) {
-        tag = "Player";
+    Player2(float startX, float startY) : GameObject("Player2", startX, startY) {
+        tag = "Player2";
         renderLayer = 100;
 
         scale = scale * 4.0f;
@@ -37,15 +36,17 @@ public:
 
         // 1. Tworzymy komponent podając tylko rozmiar klatki
         auto animPtr = std::make_unique<AnimatedSpriteComponent>(
-            AssetManager::GetImage("Player"), 16, 24
+            AssetManager::GetImage("Player2"), 16, 16
         );
         anim = animPtr.get();
 
+        // Argumenty funkcji: Nazwa, StartCol, StartRow, Klatki, Szybkość, Zapętlanie
         anim->AddAnimation("WalkDown",  0, 0, 4, 6, true);
-        anim->AddAnimation("WalkUp",    0, 3, 4, 6, true);
-        anim->AddAnimation("WalkRight", 0, 1, 4, 6, true);
-        anim->AddAnimation("WalkLeft",  0, 2, 4, 6, true);
+        anim->AddAnimation("WalkUp",    0, 1, 4, 6, true);
+        anim->AddAnimation("WalkRight", 0, 2, 4, 6, true);
+        anim->AddAnimation("WalkLeft",  0, 3, 4, 6, true);
         AddComponent(std::move(animPtr));
+        
         
 
         anim->Play("WalkUp");
@@ -62,11 +63,11 @@ public:
     void Update() override {
 
         Point2D velocity(0.0f, 0.0f);
-        float currentSpeed = Input::IsActionHeld("PlayerRun") ? runSpeed : moveSpeed;
-        if (Input::IsActionHeld("PlayerMoveUp"))    velocity.y = -currentSpeed;
-        if (Input::IsActionHeld("PlayerMoveDown"))  velocity.y = currentSpeed;
-        if (Input::IsActionHeld("PlayerMoveLeft"))  velocity.x = -currentSpeed;
-        if (Input::IsActionHeld("PlayerMoveRight")) velocity.x = currentSpeed;
+
+        if (Input::IsActionHeld("Player2MoveUp"))    velocity.y = -moveSpeed;
+        if (Input::IsActionHeld("Player2MoveDown"))  velocity.y = moveSpeed;
+        if (Input::IsActionHeld("Player2MoveLeft"))  velocity.x = -moveSpeed;
+        if (Input::IsActionHeld("Player2MoveRight")) velocity.x = moveSpeed;
 
         if (velocity.x != 0 && velocity.y != 0) {
             velocity = velocity * 0.707f; // Normalizacja predkosci przy ruchu po skosie (1/sqrt(2))

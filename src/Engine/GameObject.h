@@ -28,6 +28,9 @@ public:
     /** @brief Lokalny kat obrotu obiektu (w radianach). */
     float angle;
 
+    /** @brief Warstwa renderowania (odpowiednik z-index); wyzsza wartosc rysuje obiekt na wierzchu. */
+    int renderLayer = 0;
+
     Point2D scale = {1.0f, 1.0f};
 
     /** @brief Wskaznik na rodzica w drzewie sceny; nullptr oznacza korzen. */
