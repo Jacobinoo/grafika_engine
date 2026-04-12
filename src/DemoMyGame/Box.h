@@ -2,6 +2,7 @@
 #include "../Engine/GameObject.h"
 #include "../Engine/Engine.h"
 #include "../Engine/Components/ShapeComponent.h"
+#include "../Engine/Components/SpriteComponent.h"
 #include "../Engine/Input/Input.h"
 #include <cmath>
 
@@ -29,6 +30,9 @@ public:
 
         AddComponent(std::make_unique<ShapeComponent>(rect, Color(165, 42,42, 255), true));
         AddComponent(std::make_unique<ShapeComponent>(rect, Color::Black, false));
+        AddComponent(std::make_unique<SpriteComponent>(
+            AssetManager::GetImage("Box"), 0, 0, 60, 60
+        ));
     }
 
     /**

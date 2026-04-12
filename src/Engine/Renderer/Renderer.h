@@ -75,18 +75,7 @@ public:
      */
     void DrawBitmapText(const std::string& text, int startX, int startY, const sf::Image& fontImage, float scale = 1.0f);
 
-    /**
-     * @brief Rysuje klatke sprite'a z tekstury z opcjonalnym skalowaniem.
-     * @param startX Pozycja srodka sprite'a X.
-     * @param startY Pozycja srodka sprite'a Y.
-     * @param image Tekstura zrodlowa.
-     * @param srcX X lewego-gornego rogu klatki w atlasie.
-     * @param srcY Y lewego-gornego rogu klatki w atlasie.
-     * @param frameW Szerokosc klatki.
-     * @param frameH Wysokosc klatki.
-     * @param scale Skala rysowania.
-     */
-    void DrawSprite(int startX, int startY, const sf::Image& image, int srcX, int srcY, int frameW, int frameH, float scale = 1.0f);
+    void DrawSprite(const Point2D& pos, float angle, const Point2D& scale, const sf::Image& image, int srcX, int srcY, int frameW, int frameH);
 
     /**
      * @brief Przesyla bufor pikseli do tekstury i rysuje go w oknie.

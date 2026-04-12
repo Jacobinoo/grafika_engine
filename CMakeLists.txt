@@ -31,15 +31,19 @@ add_executable(main
     src/Engine/Input/Input.cpp
     src/Engine/Components/BaseComponent.h
     src/Engine/Components/ShapeComponent.h
+    src/Engine/Components/SpriteComponent.h
+    src/Engine/Components/AnimatedSpriteComponent.h
     src/Engine/Math/Point2D.cpp
     src/Engine/Math/Primitives.h
     src/Engine/Renderer/Renderer.cpp
     src/Engine/GameObject.cpp
+    src/Engine/AssetManager.cpp
     
     src/DemoMyGame/MyGame.h
-    src/DemoMyGame/Ship.h
+    src/DemoMyGame/Player.h
     src/DemoMyGame/Ufo.h
     src/DemoMyGame/Poly.h
+    src/DemoMyGame/Box.h
 )
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)

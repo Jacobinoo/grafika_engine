@@ -379,29 +379,69 @@ void Renderer::DrawBitmapText(const std::string& text, int startX, int startY, c
     }
 }
 
-/**
- * @brief Rysuje klatke sprite'a i skaluje ja programowo.
- */
-void Renderer::DrawSprite(int startX, int startY, const sf::Image& image, int srcX, int srcY, int frameW, int frameH, float scale) {
-    int scaledW = frameW * scale;
-    int scaledH = frameH * scale;
+void Renderer::DrawSprite(const Point2D& pos, float angle, const Point2D& scale, const sf::Image& image, int srcX, int srcY, int frameW, int frameH) {
+    if (scale.x == 0.0f || scale.y == 0.0f) return;
 
-    // Rysujemy od srodka (origin), co upraszcza obracanie/pozycjonowanie obiektow.
-    startX -= scaledW / 2;
-    startY -= scaledH / 2;
+    // 1. Obliczamy wymiary obrazka po zeskalowaniu
+    float scaledW = frameW * std::abs(scale.x);
+    float scaledH = frameH * std::abs(scale.y);
 
-    for (int sy = 0; sy < scaledH; ++sy) {
-        for (int sx = 0; sx < scaledW; ++sx) {
+    // 2. Znajdujemy Bounding Box obróconego obrazka, żeby nie skanować całego ekranu
+    // Używamy naszych metod z Point2D do obrócenia 4 rogów!
+    Point2D corners[4] = {
+        Point2D(-scaledW / 2, -scaledH / 2).Rotate(angle) + pos,
+        Point2D(scaledW / 2, -scaledH / 2).Rotate(angle) + pos,
+        Point2D(scaledW / 2, scaledH / 2).Rotate(angle) + pos,
+        Point2D(-scaledW / 2, scaledH / 2).Rotate(angle) + pos
+    };
 
-            int texX = srcX + (sx / scale);
-            int texY = srcY + (sy / scale);
+    int minX = width, maxX = 0, minY = height, maxY = 0;
+    for (int i = 0; i < 4; i++) {
+        if (corners[i].x < minX) minX = std::floor(corners[i].x);
+        if (corners[i].x > maxX) maxX = std::ceil(corners[i].x);
+        if (corners[i].y < minY) minY = std::floor(corners[i].y);
+        if (corners[i].y > maxY) maxY = std::ceil(corners[i].y);
+    }
 
-            if (texX >= 0 && texX < image.getSize().x && texY >= 0 && texY < image.getSize().y) {
-                sf::Vector2u vec2 = sf::Vector2u{(uint) texX, (uint) texY};
-                sf::Color pixelColor = image.getPixel(vec2);
+    // Bezpieczne przycięcie do krawędzi ekranu (Clamping)
+    minX = std::max(0, minX); maxX = std::min((int)width - 1, maxX);
+    minY = std::max(0, minY); maxY = std::min((int)height - 1, maxY);
 
-                if (pixelColor.a > 128 && pixelColor != sf::Color::Black) {
-                    PutPixel(startX + sx, startY + sy, pixelColor);
+    // Wcześniejsze wyliczenie odwrotności trygonometrycznych (dla optymalizacji)
+    float invCos = std::cos(-angle);
+    float invSin = std::sin(-angle);
+
+    // 3. BACKWARD MAPPING: Skanujemy piksele na monitorze
+    for (int y = minY; y <= maxY; ++y) {
+        for (int x = minX; x <= maxX; ++x) {
+            
+            // Wektor od środka obrazka na ekranie
+            float dx = x - pos.x;
+            float dy = y - pos.y;
+
+            // ODWROTNY OBRÓT (Cofamy piksel ekranu do orientacji obrazka)
+            float localX = dx * invCos - dy * invSin;
+            float localY = dx * invSin + dy * invCos;
+
+            // ODWROTNE SKALOWANIE
+            localX /= scale.x;
+            localY /= scale.y;
+
+            // Przesuwamy środek (0,0) z powrotem w lewy górny róg klatki
+            localX += frameW / 2.0f;
+            localY += frameH / 2.0f;
+
+            // Jeśli tak wyliczony punkt mieści się w naszej oryginalnej klatce:
+            if (localX >= 0.0f && localX < frameW && localY >= 0.0f && localY < frameH) {
+                int texX = srcX + (int)localX;
+                int texY = srcY + (int)localY;
+
+                // Pobieramy piksel i rysujemy (ignorujemy przezroczystość)
+                if (texX < image.getSize().x && texY < image.getSize().y) {
+                    sf::Color pixelColor = image.getPixel({(unsigned int)texX, (unsigned int)texY});
+                    if (pixelColor.a > 128) {
+                        PutPixel(x, y, pixelColor);
+                    }
                 }
             }
         }

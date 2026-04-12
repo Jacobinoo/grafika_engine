@@ -1,6 +1,7 @@
 #include "../Engine/IGame.h"
 #include "../Engine/Engine.h"
 #include "../Engine/Input/Input.h"
+#include "../Engine/AssetManager.h"
 #include "Box.h"
 #include "Ship.h"
 #include "Ufo.h"
@@ -20,6 +21,10 @@ public:
      * @brief Inicjalizuje akcje wejscia i tworzy obiekty sceny startowej.
      */
     void Start() override {
+        AssetManager::LoadImage("Box", "src/DemoMyGame/Assets/Sprites/Box.png");
+        AssetManager::LoadImage("Player", "src/DemoMyGame/Assets/Sprites/Player.png");
+
+
         // Mapowanie akcji logicznych na klawisze uproszcza dalsza logike gry.
         Input::BindMouseAction("Click", MouseCode::Left);
         Input::BindAction("ChangeColor", KeyCode::K);
@@ -27,11 +32,13 @@ public:
         Input::BindAction("MoveLeft", KeyCode::Left);
         Input::BindAction("MoveRight", KeyCode::Right);
 
-        Input::BindAction("UfoMoveLeft", KeyCode::A);
-        Input::BindAction("UfoMoveRight", KeyCode::D);
+        // Input::BindAction("UfoMoveLeft", KeyCode::A);
+        // Input::BindAction("UfoMoveRight", KeyCode::D);
 
-        Input::BindAction("BoxMoveLeft", KeyCode::V);
-        Input::BindAction("BoxMoveRight", KeyCode::B);
+        Input::BindAction("PlayerMoveLeft", KeyCode::A);
+        Input::BindAction("PlayerMoveRight", KeyCode::D);
+        Input::BindAction("PlayerMoveUp", KeyCode::W);
+        Input::BindAction("PlayerMoveDown", KeyCode::S);
 
 
         Engine &engine = Engine::GetInstance();
@@ -43,11 +50,6 @@ public:
         int screenH = engine.GetScreenHeight();
 
         engine.Instantiate(
-            std::make_unique<Ship>(screenW/2, screenH/2)
-        );
-
-
-        engine.Instantiate(
             std::make_unique<Box>((screenW/2)-200, screenH/2)
         );
 
@@ -55,8 +57,12 @@ public:
             std::make_unique<Poly>((screenW/2)-600, screenH/2)
         );
 
-                engine.Instantiate(
+        engine.Instantiate(
             std::make_unique<Ufo>((screenW/2)-50, screenH/2)
+        );
+
+        engine.Instantiate(
+            std::make_unique<Player>(screenW/2, screenH/2)
         );
     }
 
